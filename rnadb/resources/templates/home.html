@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="span12">
+
+        <form method="POST" action="/search">
+            <div class="form-group">
+                {% csrf-field %}
+                <p>
+                    Gene search:
+                    <input class="form-control"
+                           type="text"
+                           name="name"
+                           value=" " />
+                </p>
+                <input type="submit" class="btn btn-primary" value="Search" />
+            </div>
+        </form>
+
+    </div>
+</div>
+{% endblock %}
