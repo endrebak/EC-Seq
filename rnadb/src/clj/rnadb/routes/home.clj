@@ -1,3 +1,4 @@
+
 (ns rnadb.routes.home
   (:require [rnadb.layout :as layout]
             [compojure.core :refer [defroutes GET POST]]
@@ -15,9 +16,13 @@
   (layout/render "about.html"))
 
 
-(defn gene-info-page [{:keys }]
-  (layout/render "gene.html"
-                 {:results request}))
+(defn gene-info-page [{{gene-name :name} :params}]
+  (do
+    (println gene-name)
+    (let [query-result (db/get-gene {:id gene-name})]
+      (println query-result)
+      (layout/render "gene.html"
+                     {:results query-result}))))
 
 
 (defroutes home-routes
