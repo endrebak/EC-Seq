@@ -1,0 +1,7 @@
+CREATE TABLE RNADB
+(id VARCHAR(20) PRIMARY KEY,
+FDR FLOAT,
+contrast1 FLOAT,
+contrast2 FLOAT,
+contrast3 FLOAT,
+info VARCHAR(30));
