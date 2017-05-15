@@ -1,7 +1,20 @@
-CREATE TABLE RNADB
+CREATE TABLE toptable
 (id VARCHAR(20) PRIMARY KEY,
-FDR FLOAT,
-contrast1 FLOAT,
-contrast2 FLOAT,
-contrast3 FLOAT,
-info VARCHAR(30));
+eciivsd_logfc FLOAT,
+eciivsd_aveexpr FLOAT,
+eciivsd_t FLOAT,
+eciivsd_p_value FLOAT,
+eciivsd_adj_p_val FLOAT,
+eciivsd_b FLOAT,
+mecvslec_logfc FLOAT,
+mecvslec_aveexpr FLOAT,
+mecvslec_t FLOAT,
+mecvslec_p_value FLOAT,
+mecvslec_adj_p_val FLOAT,
+mecvslec_b FLOAT
+ovsy_logfc FLOAT,
+ovsy_aveexpr FLOAT,
+ovsy_t FLOAT,
+ovsy_p_value FLOAT,
+ovsy_adj_p_val FLOAT,
+ovsy_b FLOAT);
