@@ -58,3 +58,15 @@ Connect to website
 ```
 lynx localhost:3000
 ```
+
+Database port:
+
+```
+3306
+```
+
+Port for server:
+
+```
+8080
+```

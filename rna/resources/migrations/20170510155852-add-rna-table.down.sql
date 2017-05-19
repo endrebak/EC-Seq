@@ -1,1 +1,1 @@
-DROP TABLE RNADB;
+DROP TABLE toptable;

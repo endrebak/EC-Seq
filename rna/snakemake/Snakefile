@@ -1,0 +1,18 @@
+rules_to_include = ["join_toptables.rules", "fill_toptable_database.rules", "plot_genes.rules"]
+
+for rule in rules_to_include:
+    include:
+        "rules/" + rule
+
+rule fill_toptable_db:
+    """Requires `lein run migrate` to have been run.
+    Asks for pw to fill database"""
+    input:
+        "data/fill_toptable_db.token_file"
+
+df = pd.read_table("../data/pd_EC.csv", sep=" ")
+genes = df.variable.drop_duplicates().reset_index(drop=True)
+
+rule plot_genes:
+    """Plots all ~17k genes in the results. Run in parallel and be patient."""
+    input: expand("data/plots/{gene}.png", gene=genes)
