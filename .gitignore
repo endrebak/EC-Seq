@@ -1,6 +1,7 @@
 *.png
 *.gif
 *.pdf
+
 .snakemake/
 .snakemake.
 *.db
