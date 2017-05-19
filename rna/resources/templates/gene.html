@@ -5,13 +5,14 @@
 
         {% for result in results %}
 
-        <p>Gene name: {{result.name}}</p>
-        <p>FDR: {{result.fdr}}</p>
-        <p>contrast1: {{result.contrast1}}</p>
-        <p>contrast2: {{result.contrast2}}</p>
-        <p>contrast3: {{result.contrast3}}</p>
-        <p>info: {{result.info}}</p>
+        <p>Gene name: {{result.id}}</p>
+        <p>FDR: {{result.adj_p_val}}</p>
+        <p>ECIIvsD FDR: {{result.eciivsd_adj_p_val}}</p>
+        <p>MECvsLEC FDR: {{result.mecvslec_adj_p_val}}</p>
+        <p>OvsY FDR: {{result.ovsy_adj_p_val}}</p>
 
+        <img src="img/{{result.id}}.png" alt="{{result.id}}">
+        <!-- # style="width:304px;height:228px;"> -->
         {% endfor %}
 
         <form method="POST" action="/search">

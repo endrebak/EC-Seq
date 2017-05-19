@@ -5,7 +5,7 @@ template_string = """INSERT INTO toptable
 VALUES ("{id}", "{eciivsd_logfc}", "{eciivsd_aveexpr}", "{eciivsd_t}", "{eciivsd_p_value}", "{eciivsd_adj_p_val}", "{eciivsd_b}", "{mecvslec_logfc}", "{mecvslec_aveexpr}", "{mecvslec_t}", "{mecvslec_p_value}", "{mecvslec_adj_p_val}", "{mecvslec_b}", "{ovsy_logfc}", "{ovsy_aveexpr}", "{ovsy_t}", "{ovsy_p_value}", "{ovsy_adj_p_val}", "{ovsy_b}", "{logfc}", "{t}", "{p_value}", "{adj_p_val}", "{b}");
 """
 
-rule fill_toptable_db:
+rule _fill_toptable_db:
     input:
         "data/joined.csv"
     output:

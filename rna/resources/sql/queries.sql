@@ -1,8 +1,8 @@
 -- name: add-gene!!
 -- creates a new gene record
-INSERT INTO RNADB
-(id, FDR, contrast1, contrast2, contrast3, info)
-VALUES (:id, :FDR, :contrast1, :contrast2, :contrast3, :info)
+-- INSERT INTO RNADB
+-- (id, FDR, contrast1, contrast2, contrast3, info)
+-- VALUES (:id, :FDR, :contrast1, :contrast2, :contrast3, :info)
 
 -- name: update-user!
 -- update an existing user record
@@ -12,10 +12,10 @@ VALUES (:id, :FDR, :contrast1, :contrast2, :contrast3, :info)
 
 -- name: get-gene
 -- retrieve a gene given the name.
-SELECT * FROM RNADB
+SELECT * FROM toptable
 WHERE id = :id
 
 -- name: delete-gene!
 -- delete a gene given the id
-DELETE FROM RNADB
-WHERE id = :id
+-- DELETE FROM RNADB
+-- WHERE id = :id

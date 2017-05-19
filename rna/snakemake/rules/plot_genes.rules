@@ -7,11 +7,11 @@ Upside: can run in parallel easily
 
 import pandas as pd
 
-rule plot_genes:
+rule _plot_genes:
     # requires ggplot2 and reshape2
     input:
         "../data/pd_EC.csv"
     output:
-        "data/plots/{gene}.png"
+        "../resources/public/img/{gene}.png"
     script:
-        "scripts/plot_genes.R"
+        "../scripts/plot_genes.R"
