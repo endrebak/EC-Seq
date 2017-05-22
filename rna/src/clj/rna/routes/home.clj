@@ -18,7 +18,8 @@
 (defn gene-info-page [{{gene-name :name} :params}]
   (do
     (println gene-name)
-    (let [query-result (db/get-gene {:id gene-name})]
+    (let [gene-name-cleaned (clojure.string/trim gene-name)
+          query-result (db/get-gene {:id gene-name-cleaned})]
       (println query-result)
       (layout/render "gene.html"
                      {:results query-result}))))
