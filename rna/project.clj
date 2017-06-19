@@ -27,7 +27,8 @@
                  [mysql/mysql-connector-java "5.1.6"]
                  [org.webjars/webjars-locator-jboss-vfs "0.1.0"]
                  [luminus-immutant "0.1.0"]
-                 [luminus-log4j "0.1.2"]]
+                 [luminus-log4j "0.1.2"]
+                 [org.clojure/data.json "0.2.6"]]
 
   :min-lein-version "2.0.0"
   :uberjar-name "rna.jar"
@@ -53,7 +54,6 @@
                                  [ring/ring-devel "1.4.0"]
                                  [pjstadig/humane-test-output "0.7.1"]
                                  [mvxcvi/puget "1.0.0"]]
-
 
                   :source-paths ["env/dev/clj" "test/clj"]
                   :resource-paths ["env/dev/resources"]

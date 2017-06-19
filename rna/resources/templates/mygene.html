@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="span12">
+        {% if results|not-empty %}
+
+        No results found in our database for search term "{{term}}". Are any of these genes what you are looking for?
+
+        {% for result in results %}
+
+        <p>Symbol: {{result.symbol}}, Name: {{result.name}}</p>
+
+        {% endfor %}
+
+        {% else %}
+
+        No results found for search term "{{term}}" in entrez or gene symbol databases.
+
+        {% endif %}
+
+        <form method="POST" action="/search">
+            <div class="form-group">
+                {% csrf-field %}
+                <p>
+                    Gene search:
+                    <input class="form-control"
+                           type="text"
+                           name="name"
+                           value=" " />
+                </p>
+                <input type="submit" class="btn btn-primary" value="Search" />
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
