@@ -10,7 +10,16 @@
 
         {% for result in results %}
 
-        <p>Symbol: {{result}}</p>
+        <p>
+            <form method="POST" action="/search" class="inline">
+                {% csrf-field %}
+                <input type="hidden" name="name" value="{{result}}">
+                <button type="submit" name="submit_param" value="submit_value" class="link-button">
+                    {{result}}
+                </button>
+            </form>
+
+        </p>
 
         {% endfor %}
 

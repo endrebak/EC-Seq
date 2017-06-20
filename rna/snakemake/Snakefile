@@ -15,4 +15,5 @@ genes = df.variable.drop_duplicates().reset_index(drop=True)
 
 rule plot_genes:
     """Plots all ~17k genes in the results. Run in parallel and be patient."""
-    input: expand("../resources/public/img/{gene}.png", gene=genes)
+    input:
+        expand("../resources/public/img/{gene}.png", gene=genes)
