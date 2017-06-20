@@ -6,9 +6,11 @@
 
         No results found in our database for search term "{{term}}". Are any of these genes what you are looking for?
 
+        <br><br>
+
         {% for result in results %}
 
-        <p>Symbol: {{result.symbol}}, Name: {{result.name}}</p>
+        <p>Symbol: {{result}}</p>
 
         {% endfor %}
 

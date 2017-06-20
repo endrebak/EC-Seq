@@ -23,8 +23,8 @@
 
 (defn lookup-gene-local [term]
   "Lookup gene name in local db"
-  (let [gene-name-cleaned (clojure.string/trim term)
-        query-result (db/get-gene {:id gene-name-cleaned})]))
+  (let [gene-name-cleaned (clojure.string/trim term)]
+    (db/get-gene {:id gene-name-cleaned})))
 
 (defn lookup-gene-mygene [term]
   "Lookup gene in mygene.info for name conversion"
@@ -33,12 +33,13 @@
           result (json/read-str (slurp url) :key-fn keyword)]
       result))
 
-(defn are-genes-in-local-db [mygene-results]
+(defn genes-in-local-db [mygene-results]
   "Need to ensure that the genes are in the local database before we display
   them as a suggestion."
-  )
+    (filter #(seq (lookup-gene-local %1)) (map :symbol mygene-results)))
 
 (defn gene-info-page [{{gene-name :name} :params}]
+  "Display either the result page for the gene or suggestions for synonyms"
     (let [gene-name-cleaned (clojure.string/trim gene-name)
           query-result (db/get-gene {:id gene-name-cleaned})]
 
@@ -49,18 +50,10 @@
                         :term gene-name-cleaned})
         ;; need to search for gene in mygene
         (let [mygene-results (lookup-gene-mygene gene-name-cleaned)
-
-              ]
-           (layout/render "mygene.html"
-                          {:results (:hits mygene-results)
-                           :term gene-name-cleaned})))))
-
-      ;;   (do (print "query result empty")
-      ;;       (print gene-name-cleaned)
-      ;;       (print (lookup-mygene gene-name-cleaned))))
-      ;; (layout/render "gene.html"
-      ;;                {:results query-result
-      ;;                 :term gene-name-cleaned}))))
+              mygene-in-local-db (genes-in-local-db (:hits mygene-results))]
+            (layout/render "mygene.html"
+                           {:results mygene-in-local-db
+                            :term gene-name-cleaned})))))
 
 
 (defroutes home-routes
