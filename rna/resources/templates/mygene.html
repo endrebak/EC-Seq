@@ -13,9 +13,9 @@
         <p>
             <form method="POST" action="/search" class="inline">
                 {% csrf-field %}
-                <input type="hidden" name="name" value="{{result}}">
+                <input type="hidden" name="name" value="{{result.symbol}}">
                 <button type="submit" name="submit_param" value="submit_value" class="link-button">
-                    {{result}}
+                    {{result.symbol}} - {{result.name}}
                 </button>
             </form>
 

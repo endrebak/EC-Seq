@@ -36,7 +36,7 @@
 (defn genes-in-local-db [mygene-results]
   "Need to ensure that the genes are in the local database before we display
   them as a suggestion."
-    (filter #(seq (lookup-gene-local %1)) (map :symbol mygene-results)))
+  (filter #(seq (lookup-gene-local (:symbol %1))) (map #(select-keys %1 [:name :symbol]) mygene-results)))
 
 (defn gene-info-page [{{gene-name :name} :params}]
   "Display either the result page for the gene or suggestions for synonyms"
@@ -51,6 +51,8 @@
         ;; need to search for gene in mygene
         (let [mygene-results (lookup-gene-mygene gene-name-cleaned)
               mygene-in-local-db (genes-in-local-db (:hits mygene-results))]
+          (println mygene-results)
+          (println mygene-in-local-db)
           (if (== (count mygene-in-local-db) 1)
             ;; if only one mygene hit, look up graph
             (layout/render "gene.html"
