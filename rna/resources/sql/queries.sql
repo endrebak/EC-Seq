@@ -15,6 +15,11 @@
 SELECT * FROM toptable
 WHERE id = :id
 
+-- name: get-toptable
+-- retrieve toptable values given a layer
+SELECT :p FROM toptable
+ORDER BY :col
+
 -- name: delete-gene!
 -- delete a gene given the id
 -- DELETE FROM RNADB

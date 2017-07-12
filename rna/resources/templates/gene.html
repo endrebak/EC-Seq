@@ -4,13 +4,13 @@
     <div class="span12">
         {% for result in results %}
 
-        <p>Gene name: {{result.id}}</p>
-        <!-- Ifs print p value in bold if below 0.05 -->
+        <p>Gene symbol: {{result.symbol}} ({{result.name}})</p>
+
         <p>EC II vs. Deep FDR: {% if result.eciivsd_adj_p_val <= 0.05 %} <b>{{result.eciivsd_adj_p_val}}</b> {% else %} {{result.eciivsd_adj_p_val}} {% endif %}</p>
         <p>Med vs. Lat FDR:  {% if result.mecvslec_adj_p_val <= 0.05 %} <b>{{result.mecvslec_adj_p_val}}</b> {% else %} {{result.mecvslec_adj_p_val}} {% endif %}</p>
         <p>P02/P09 vs P23/P45 FDR: {% if result.ovsy_adj_p_val <= 0.05 %} <b>{{result.ovsy_adj_p_val}}</b> {% else %} {{result.ovsy_adj_p_val}} {% endif %}</p>
 
-        <img src="img/{{result.id}}.png" alt="{{result.id}}", height="525", width="700">
+        <img src="img/{{result.symbol}}.png" alt="{{result.symbol}}", height="525", width="700">
         <!-- # style="width:304px;height:228px;"> -->
         {% endfor %}
 
