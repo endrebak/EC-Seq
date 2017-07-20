@@ -1,8 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
-<p>Browse:
-    <a href="toptable">EC II vs. Deep</a>
-    Med vs. Lat
-    P02/P09 vs P23/P45
+
+<p>
+    <form method="POST" action="/toptable" class="inline">
+        {% csrf-field %}
+        <input type="hidden" name="layer" value="eciivsd">
+        <button type="submit" name="submit_param" value="submit_value" class="link-button">
+           ECII vs. Deep
+        </button>
+    </form>
 </p>
+
+<p>
+    <form method="POST" action="/toptable" class="inline">
+        {% csrf-field %}
+        <input type="hidden" name="layer" value="mecvslec">
+        <button type="submit" name="submit_param" value="submit_value" class="link-button">
+           Med. vs Lat.
+        </button>
+    </form>
+</p>
+
+
+<p>
+    <form method="POST" action="/toptable" class="inline">
+        {% csrf-field %}
+        <input type="hidden" name="layer" value="ovsy">
+        <button type="submit" name="submit_param" value="submit_value" class="link-button">
+            Old vs Young
+        </button>
+    </form>
+</p>
+
 {% endblock %}

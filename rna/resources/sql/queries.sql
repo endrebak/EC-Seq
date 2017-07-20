@@ -17,7 +17,7 @@ WHERE id = :id
 
 -- name: get-toptable
 -- retrieve toptable values given a layer
-SELECT :p FROM toptable
+SELECT * FROM toptable
 ORDER BY :col
 
 -- name: delete-gene!

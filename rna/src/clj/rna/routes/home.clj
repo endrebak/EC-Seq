@@ -14,9 +14,8 @@
 (defn about-page []
   (layout/render "about.html"))
 
-(defn browse-page [layer layer-results]
-  (layout/render "browse.html" layer layer-results))
-
+(defn browse-page []
+  (layout/render "browse.html"))
 
 
 (defn lookup-gene [term]
@@ -81,18 +80,35 @@
                         :term search-term-cleaned}))))
 
 (defn toptable-row-relevant-keys [layer toptable-row]
-    (map #(keyword %1) (filter #(.contains %1 layer)  (map name (keys toptable-row)))))
+  (let [regex-pat (str layer "|id|name")
+        regex (java.util.regex.Pattern/compile regex-pat)]
+    (sort (map #(keyword %1) (filter #(re-find regex %1) (map name (keys toptable-row)))))))
+
 
 (defn toptable-relevant-items [layer toptable-results]
   (let [tt-keys (toptable-row-relevant-keys layer (first toptable-results))]
     (map #(select-keys %1 tt-keys) toptable-results)))
 
 (defn toptable-rename-items [layer toptable-results]
-  nil)
+  (let [to-remove (str layer "_")]
+    (for [d (seq toptable-results)]
+      (into {} (for [[k v] d]
+                 [(keyword (clojure.string/replace (name k) to-remove "")) v])))))
+
+(defn parse-toptable [layer toptable-results]
+  (->> toptable-results
+   (toptable-relevant-items layer)
+   (toptable-rename-items layer)))
+
+(defn toptable-page [{{layer :layer} :params}]
+  (let [db-results (db/get-toptable {:col (str layer "_adj_p_val")})
+        toptable-parsed (parse-toptable layer db-results)
+        ttp-sorted (sort-by :adj_p_val toptable-parsed)]
+    (layout/render "toptable.html" {:results ttp-sorted :layer layer})))
 
 (defroutes home-routes
   (GET "/" [] (home-page))
   (POST "/search" request (gene-info-page request))
-  ;; (POST "/toptable" request (toptable-page request))
+  (POST "/toptable" request (toptable-page request))
   (GET "/about" [] (about-page))
   (GET "/browse" [] (browse-page)))

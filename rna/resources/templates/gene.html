@@ -12,8 +12,11 @@
 
         <img src="img/{{result.symbol}}.png" alt="{{result.symbol}}", height="525", width="700">
         <!-- # style="width:304px;height:228px;"> -->
-        {% endfor %}
+        <p>
+        <a href="http://genome-euro.ucsc.edu/cgi-bin/hgTracks?db=rn6&hubUrl=http://havpryd.medisin.ntnu.no/ECSeq/hub.txt&position={{result.symbol}}">View in the UCSC genome browser.</a>
 
+        </p>
+        {% endfor %}
         <form method="POST" action="/search">
             <div class="form-group">
                 {% csrf-field %}
