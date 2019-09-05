@@ -10,7 +10,7 @@ rule add_header:
     output:
         "data/{toptable}_header.csv"
     run:
-        df = pd.read_table(input[0], sep=" ")
+        df = pd.read_csv(input[0], sep=" ")
 
         if wildcards.toptable != "toptable":
             df.columns = (wildcards.toptable + "_" + c  for c in df.columns)
@@ -26,7 +26,7 @@ rule join_toptables:
     output:
         "data/joined.csv"
     run:
-        tables = (pd.read_table(f, sep=" ", index_col=0) for f in input)
+        tables = (pd.read_csv(f, sep=" ", index_col=0) for f in input)
         df = pd.concat(tables, axis=1)
         print(df.head(2))
         df.to_csv(output[0], sep=" ")

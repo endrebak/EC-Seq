@@ -11,7 +11,7 @@ rule _fill_toptable_db:
     output:
         "data/fill_toptable_db.sql"
     run:
-        df = pd.read_table(input[0], sep=" ")
+        df = pd.read_csv(input[0], sep=" ")
         df.columns = ["id"] + list(df.columns)[1:]
 
         outstrings = []

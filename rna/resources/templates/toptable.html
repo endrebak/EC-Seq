@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+<style type="text/css">
+td
+{
+    font-family: "Courier New", Courier, monospace;
+    padding:0 20px 0 20px;
+}
+</style>
+
+<style type="text/css">
+th
+{
+    padding:0 20px 0 20px;
+}
+</style>
+
+<div class="row">
+    <div class="span12">
+        <h1>{{layer}}</h1>
+        <br>
+
+        <table>
+            <tr>
+                <th>Symbol</th>
+                <th>FDR</th>
+                <th>logFC</th>
+                <th>Average Expression</th>
+            </tr>
+
+            {% for result in results %}
+
+            <tr>
+                <td>
+                    <form method="POST" action="/search" class="inline">
+                        {% csrf-field %}
+                        <input type="hidden" name="name" value="{{result.id}}">
+                        <button type="submit" name="submit_param" value="submit_value" class="link-button">
+                            {{result.id}}
+                        </button>
+                    </form>
+                </td>
+                <td>{{result.adj_p_val}}</td>
+                <td>{{result.logfc}}</td>
+                <td>{{result.aveexpr}}</td>
+            </tr>
+
+             {% endfor %}
+
+        </table>
+
+        <form method="POST" action="/search">
+            <div class="form-group">
+                {% csrf-field %}
+                <p>
+                    Gene search:
+                    <input class="form-control"
+                           type="text"
+                           name="name"
+                           value=" " />
+                </p>
+                <input type="submit" class="btn btn-primary" value="Search" />
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

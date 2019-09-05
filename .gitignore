@@ -1,3 +1,6 @@
+rna/snakemake/data/
+*.RDS
+*.rds
 *.png
 *.gif
 *.pdf

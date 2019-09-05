@@ -1,0 +1,369 @@
+(slurp "mygene.info/v3/query?q=cullin%20domain&species=rat
+")
+(slurp "https://mygene.info/v3/query?q=cullin%20domain&species=rat")
+(:require [clojure.data.json :as json])
+(ns example
+  (:require [clojure.data.json :as json]))
+json/read-str
+(def s (slurp "https://mygene.info/v3/query?q=cullin%20domain&species=rat"))
+(json/read-str s)
+{def d (json/read-str s))
+(def d (json/read-str s))
+d
+(class d)
+(map d)
+(print (map d))
+[:max_score d]
+(:max_score d)
+(:"max_score" d)
+("max_score" d)
+(assoc d)
+d
+(assoc {} d)
+d[1]
+(d :1) 
+(def d (json/read-str s :key-fn keyword))
+d
+(:hits d)
+d
+(:max_score d)d
+(:max_score d)
+(defn lookup-gene-mygene [term]
+  "Lookup gene in mygene.info for name conversion"
+    (let [term (clojure.string/replace term " " "%20")
+          url (format "https://mygene.info/v3/query?q=%s&species=rat" term)
+          result (json/read-str (slurp url) :key-fn keyword)]
+      result))
+(lookup-gene-mygene "gen1")
+(lookup-gene-mygene "cullin")
+d
+(def n :max_score)
+(d n)
+d
+(:hits d)
+(def l https://mygene.info/v3/query?q=cullin%s&species=rat)
+(def l "https://mygene.info/v3/query?q=cullin%s&species=rat")
+l
+(def s (slurp l))
+s
+(def l "https://mygene.info/v3/query?q=cullin&species=rat")
+(def s (slurp l))
+s
+(def d (json/read-str s :key-fn keyword))
+d
+(def h (:hits d))
+d
+h
+(db/get-gene)
+(rna.db.core/get-gene "cullin")
+(rna.db.core/get-gene {:id "cullin"})
+(rna.db.core/get-gene {:id "cul3"})
+h
+(map :symbol h)
+(filter %((rna.db.core/get-gene {:id %1} (map :symbol h))
+(filter %((rna.db.core/get-gene {:id %1} (map :symbol h))))
+(filter #((rna.db.core/get-gene {:id %1} (map :symbol h))))
+(seq (filter #((rna.db.core/get-gene {:id %1} (map :symbol h)))))
+(def f (filter #((rna.db.core/get-gene {:id %1} (map :symbol h)))))
+f
+(list f)
+(doseq print f)
+(map print f)
+(def f (filter #((rna.db.core/get-gene {:id %1})) (map :symbol h)))
+f
+(def f (filter #(rna.db.core/get-gene {:id %1}) (map :symbol h))
+)
+f
+(rna.db.core/get-gene {:id "LOC108348250"})
+(empty? (rna.db.core/get-gene {:id "LOC108348250"}))
+(def f (filter #(empty? (rna.db.core/get-gene {:id %1})) (map :symbol h))
+)
+f
+(def f (filter #(seq (rna.db.core/get-gene {:id %1})) (map :symbol h))
+)
+f
+(empty? f)
+(defn lookup-gene-local [term]
+  "Lookup gene name in local db"
+  (let [gene-name-cleaned (clojure.string/trim term)]
+    (db/get-gene {:id gene-name-cleaned})))
+(require rna.db.core :as db)
+(require rna.db.core/ :as db)
+(require 'rna.db.core :as db)
+(require '[rna.db.core :as db])
+db
+(defn lookup-gene-local [term]
+  "Lookup gene name in local db"
+  (let [gene-name-cleaned (clojure.string/trim term)]
+    (db/get-gene {:id gene-name-cleaned})))
+(lookup-gene-local "Cul3")
+(lookup-gene-local "Cullin")
+(seq (lookup-gene-local "Cullin"))
+(seq (lookup-gene-local "CUL3"))
+(defn genes-in-local-db [mygene-results]
+  "Need to ensure that the genes are in the local database before we display
+  them as a suggestion."
+    (filter #(seq (lookup-gene-local %1)) (map :symbol mygene-results)))
+(defn lookup-gene-mygene [term]
+  "Lookup gene in mygene.info for name conversion"
+    (let [term (clojure.string/replace term " " "%20")
+          url (format "https://mygene.info/v3/query?q=%s&species=rat" term)
+          result (json/read-str (slurp url) :key-fn keyword)]
+      result))
+(lookup-gene-mygene "Cullin")
+(genes-in-local-db (map :hits(lookup-gene-mygene "Cullin")))
+(def c (map :hits(lookup-gene-mygene "Cullin"))
+)
+c
+(def c (map :hits (lookup-gene-mygene "Cullin"))
+)
+c
+(lookup-gene-mygene "Cullin")
+(:hits (lookup-gene-mygene "Cullin"))
+(lookup-gene-mygene "Cullin")
+d
+h
+d
+(first h)
+(:symbol (first h))
+(def d {:max_score 20.891268, :took 5, :total 3, :hits [{:_id 29499, :_score 20.891268, :entrezgene 29499, :name sonic hedgehog, :symbol Shh, :taxid 10116} {:_id 89830, :_score 0.26897618, :entrezgene 89830, :name patched 1, :symbol Ptch1, :taxid 10116} {:_id 140588, :_score 0.23055102, :entrezgene 140588, :name GLI family zinc finger 3, :symbol Gli3, :taxid 10116}]})
+(def d {:max_score 20.891268, :took 5, :total 3, :hits [{:_id 29499, :_score 20.891268, :entrezgene 29499, :name sonic hedgehog, :symbol Shh, :taxid 10116} {:_id 89830, :_score 0.26897618, :entrezgene 89830, :name patched 1, :symbol Ptch1, :taxid 10116} {:_id 140588, :_score 0.23055102, :entrezgene 140588, :name GLI family zinc finger 3, :symbol Gli3, :taxid 10116}})
+(def d {:max_score 20.891268, :took 5, :total 3, :hits [{:_id 29499, :_score 20.891268, :entrezgene 29499, :name sonic hedgehog, :symbol Shh, :taxid 10116} {:_id 89830, :_score 0.26897618, :entrezgene 89830, :name patched 1, :symbol Ptch1, :taxid 10116} {:_id 140588, :_score 0.23055102, :entrezgene 140588, :name GLI family zinc finger 3, :symbol Gli3, :taxid 10116}]}}
+(def d {:max_score 20.891268, :took 5, :total 3, :hits [{:_id 29499, :_score 20.891268, :entrezgene 29499, :name sonic hedgehog, :symbol Shh, :taxid 10116} {:_id 89830, :_score 0.26897618, :entrezgene 89830, :name patched 1, :symbol Ptch1, :taxid 10116} {:_id 140588, :_score 0.23055102, :entrezgene 140588, :name GLI family zinc finger 3, :symbol Gli3, :taxid 10116}]})
+(def d {:max_score 20.891268, :took 5, :total 3, :hits [{:_id 29499, :_score 20.891268, :entrezgene 29499, :name sonic hedgehog, :symbol Shh, :taxid 10116} {:_id 89830, :_score 0.26897618, :entrezgene 89830, :name patched 1, :symbol Ptch1, :taxid 10116} {:_id 140588, :_score 0.23055102, :entrezgene 140588, :name GLI family zinc finger 3, :symbol Gli3, :taxid 10116
+}
+]
+}
+)
+(def d {:max_score 20.891268, :took 5, :total 3, :hits [{:_id 29499, :_score 20.891268, :entrezgene 29499, :name sonic hedgehog, :symbol Shh, :taxid 10116} {:_id 89830, :_score 0.26897618, :entrezgene 89830, :name patched 1, :symbol Ptch1, :taxid 10116} {:_id 140588, :_score 0.23055102, :entrezgene 140588, :name GLI family zinc finger 3, :symbol Gli3, :taxid 10116}]}
+)
+(d {:max_score 20.891268, :took 5, :total 3, :hits [{:_id 29499, :_score 20.891268, :entrezgene 29499, :name "sonic hedgehog", :symbol "Shh", :taxid 10116} {:_id 89830, :_score 0.26897618, :entrezgene 89830, :name "patched 1", :symbol "Ptch1", :taxid 10116} {:_id 140588, :_score 0.23055102, :entrezgene 140588, :name "GLI family zinc finger 3", :symbol "Gli3", :taxid 10116}]}
+)
+(def d {:max_score 20.891268, :took 5, :total 3, :hits [{:_id 29499, :_score 20.891268, :entrezgene 29499, :name "sonic hedgehog", :symbol "Shh", :taxid 10116} {:_id 89830, :_score 0.26897618, :entrezgene 89830, :name "patched 1", :symbol "Ptch1", :taxid 10116} {:_id 140588, :_score 0.23055102, :entrezgene 140588, :name "GLI family zinc finger 3", :symbol "Gli3", :taxid 10116}]})
+d
+{"halla": d}
+d
+{:hits d}
+(:hits d)
+(def h (:hits d))
+h
+    (filter #(seq (lookup-gene-local %1)) (map :symbol mygene-results)))
+(select-keys h [:name :symbol])
+h
+(map #(select-keys %1 [:name :symbol]) h)
+h
+(some #{4 5 9} [1 2 3])
+(some #{4 5 9} [1 2 3 4])
+(condp count [1 2 3]
+ 1 :>> inc)
+(== 1 1)
+(= 1 1)
+(doc =)
+(doc ==)
+(
+)
+(def m ({:name "sonic hedgehog", :symbol "Shh"} {:name "ADCYAP receptor type 1", :symbol "Adcyap1r1"} {:name "GLI family zinc finger 3", :symbol "Gli3"}))
+(def r {:p_value 0.00643441, :ovsy_p_value 1.52562E-16, :mecvslec_logfc 0.0902945, :eciivsd_p_value 2.38885E-6, :mecvslec_adj_p_val 0.756431, :mecvslec_aveexpr 1.11405, :eciivsd_aveexpr 1.11405, :mecvslec_t 0.664139, :ovsy_adj_p_val 7.80853E-16, :mecvslec_b -5.96171, :id "Gen1", :mecvslec_p_value 0.50964, :ovsy_aveexpr 1.11405, :b -2.60183, :ovsy_t 12.1319, :t -2.84367, :eciivsd_b 4.4972, :eciivsd_adj_p_val 1.645E-5, :logfc -0.543706, :ovsy_logfc 1.64941, :ovsy_b 27.3804, :eciivsd_t -5.32315, :eciivsd_logfc -0.723721, :adj_p_val 0.0239513})
+r
+(def r [{:p_value 0.00643441, :ovsy_p_value 1.52562E-16, :mecvslec_logfc 0.0902945, :eciivsd_p_value 2.38885E-6, :mecvslec_adj_p_val 0.756431, :mecvslec_aveexpr 1.11405, :eciivsd_aveexpr 1.11405, :mecvslec_t 0.664139, :ovsy_adj_p_val 7.80853E-16, :mecvslec_b -5.96171, :id "Gen1", :mecvslec_p_value 0.50964, :ovsy_aveexpr 1.11405, :b -2.60183, :ovsy_t 12.1319, :t -2.84367, :eciivsd_b 4.4972, :eciivsd_adj_p_val 1.645E-5, :logfc -0.543706, :ovsy_logfc 1.64941, :ovsy_b 27.3804, :eciivsd_t -5.32315, :eciivsd_logfc -0.723721, :adj_p_val 0.0239513}])
+(use 'clojure.set)
+(clojure.set/join r m)
+(def r2 [{:p_value 0.00643441, :ovsy_p_value 1.52562E-16, :mecvslec_logfc 0.0902945, :eciivsd_p_value 2.38885E-6, :mecvslec_adj_p_val 0.756431, :mecvslec_aveexpr 1.11405, :eciivsd_aveexpr 1.11405, :mecvslec_t 0.664139, :ovsy_adj_p_val 7.80853E-16, :mecvslec_b -5.96171, :symbol "Gen1", :mecvslec_p_value 0.50964, :ovsy_aveexpr 1.11405, :b -2.60183, :ovsy_t 12.1319, :t -2.84367, :eciivsd_b 4.4972, :eciivsd_adj_p_val 1.645E-5, :logfc -0.543706, :ovsy_logfc 1.64941, :ovsy_b 27.3804, :eciivsd_t -5.32315, :eciivsd_logfc -0.723721, :adj_p_val 0.0239513}])
+(clojure.set/join r2 m)
+m
+r2
+(def r2 [{:p_value 0.00643441, :ovsy_p_value 1.52562E-16, :mecvslec_logfc 0.0902945, :eciivsd_p_value 2.38885E-6, :mecvslec_adj_p_val 0.756431, :mecvslec_aveexpr 1.11405, :eciivsd_aveexpr 1.11405, :mecvslec_t 0.664139, :ovsy_adj_p_val 7.80853E-16, :mecvslec_b -5.96171, :symbol "Shh", :mecvslec_p_value 0.50964, :ovsy_aveexpr 1.11405, :b -2.60183, :ovsy_t 12.1319, :t -2.84367, :eciivsd_b 4.4972, :eciivsd_adj_p_val 1.645E-5, :logfc -0.543706, :ovsy_logfc 1.64941, :ovsy_b 27.3804, :eciivsd_t -5.32315, :eciivsd_logfc -0.723721, :adj_p_val 0.0239513}])
+(clojure.set/join r2 m)
+r2
+m
+(def m [{:name "sonic hedgehog", :symbol "Shh"} {:name "ADCYAP receptor type 1", :symbol "Adcyap1r1"} {:name "GLI family zinc finger 3", :symbol "Gli3"}])
+(clojure.set/join r2 m)
+(class (clojure.set/join r2 m))
+(def jr (clojure.set/join r2 m))
+(:symbol jr)
+jr
+(:name jr)
+m
+r2
+(class (first r2))
+(map jr)
+(into {} jr)
+(:symbol (into {} jr))
+r2
+m
+r2
+(def r3 [{:p_value 0.00643441, :ovsy_p_value 1.52562E-16, :mecvslec_logfc 0.0902945, :eciivsd_p_value 2.38885E-6, :mecvslec_adj_p_val 0.756431, :symbol "Shh", :mecvslec_aveexpr 1.11405, :eciivsd_aveexpr 1.11405, :mecvslec_t 0.664139, :ovsy_adj_p_val 7.80853E-16, :mecvslec_b -5.96171, :mecvslec_p_value 0.50964, :ovsy_aveexpr 1.11405, :b -2.60183, :ovsy_t 12.1319, :t -2.84367, :eciivsd_b 4.4972, :eciivsd_adj_p_val 1.645E-5, :logfc -0.543706, :ovsy_logfc 1.64941, :ovsy_b 27.3804, :eciivsd_t -5.32315, :eciivsd_logfc -0.723721, :adj_p_val 0.0239513} {:symbol "Gli3"}])
+(clojure.set/join r3)
+(clojure.set/join r3 m)
+(into {} (clojure.set/join r3 m))
+(map #(into {} %1) (clojure.set/join r3 m))
+(rename-keys)
+set
+(set/join)
+(require [clojure/set :as set])
+(require [clojure.set :as set])
+(:require [clojure.set :as set])
+(ue [clojure.set :as set])
+(sue [clojure.set :as set])
+(use [clojure.set :as set])
+(require 'clojure.set)
+(require 'clojure.set :as s)
+(require '[clojure.set :as s])
+(require 'clojure.set :as set)
+(defn add-gene-name-to-query-results [query-result mygene-in-local-db]
+  (let [query-result-symbol (set/rename-keys query-result {:id :symbol})]
+    (do
+      (println query-result-symbol "query-result-symbol")
+      (map #(into {} %1) (set/join query-result-symbol mygene-in-local-db)))))
+(require '[clojure.set :as set])
+(defn add-gene-name-to-query-results [query-result mygene-in-local-db]
+  (let [query-result-symbol (set/rename-keys query-result {:id :symbol})]
+    (do
+      (println query-result-symbol "query-result-symbol")
+      (map #(into {} %1) (set/join query-result-symbol mygene-in-local-db)))))
+(def query-result ({:p_value 0.0331861, :ovsy_p_value 2.90255E-5, :mecvslec_logfc 0.298186, :eciivsd_p_value 0.00295655, :mecvslec_adj_p_val 0.428281, :mecvslec_aveexpr 0.212898, :eciivsd_aveexpr 0.212898, :mecvslec_t 1.43435, :ovsy_adj_p_val 5.70682E-5, :mecvslec_b -5.11103, :id "Shh", :mecvslec_p_value 0.157672, :ovsy_aveexpr 0.212898, :b -3.97282, :ovsy_t -4.5989, :t -2.19013, :eciivsd_b -2.21109, :eciivsd_adj_p_val 0.00898955, :logfc -0.628142, :ovsy_logfc -0.956067, :ovsy_b 1.6452, :eciivsd_t -3.12453, :eciivsd_logfc -0.649558, :adj_p_val 0.0897154}))
+(def mygene-in-local-db ({:name "sonic hedgehog", :symbol "Shh"} {:name "GLI family zinc finger 3", :symbol "Gli3"} {:name "ADCYAP receptor type 1", :symbol "Adcyap1r1"}))
+(add-gene-name-to-query-results query-result mygene-in-local-db)
+query-result
+mygene-in-local-db
+(def query-result ({:p_value 0.0331861, :ovsy_p_value 2.90255E-5, :mecvslec_logfc 0.298186, :eciivsd_p_value 0.00295655, :mecvslec_adj_p_val 0.428281, :mecvslec_aveexpr 0.212898, :eciivsd_aveexpr 0.212898, :mecvslec_t 1.43435, :ovsy_adj_p_val 5.70682E-5, :mecvslec_b -5.11103, :id "Shh", :mecvslec_p_value 0.157672, :ovsy_aveexpr 0.212898, :b -3.97282, :ovsy_t -4.5989, :t -2.19013, :eciivsd_b -2.21109, :eciivsd_adj_p_val 0.00898955, :logfc -0.628142, :ovsy_logfc -0.956067, :ovsy_b 1.6452, :eciivsd_t -3.12453, :eciivsd_logfc -0.649558, :adj_p_val 0.0897154}))
+#(def query-result ({:p_value 0.0331861, :ovsy_p_value 2.90255E-5, :mecvslec_logfc 0.298186, :eciivsd_p_value 0.00295655, :mecvslec_adj_p_val 0.428281, :mecvslec_aveexpr 0.212898, :eciivsd_aveexpr 0.212898, :mecvslec_t 1.43435, :ovsy_adj_p_val 5.70682E-5, :mecvslec_b -5.11103, :id "Shh", :mecvslec_p_value 0.157672, :ovsy_aveexpr 0.212898, :b -3.97282, :ovsy_t -4.5989, :t -2.19013, :eciivsd_b -2.21109, :eciivsd_adj_p_val 0.00898955, :logfc -0.628142, :ovsy_logfc -0.956067, :ovsy_b 1.6452, :eciivsd_t -3.12453, :eciivsd_logfc -0.649558, :adj_p_val 0.0897154}))
+#(def query-result ({:p_value 0.0331861, :id "Shh"}))
+(def query-result ({:p_value 0.0331861, :id "Shh"}))
+(def query-result {:p_value 0.0331861, :id "Shh"})
+query-result
+(add-gene-name-to-query-results query-result mygene-in-local-db)
+(defn add-gene-name-to-query-results [query-result mygene-in-local-db]
+  (let [query-result-symbol (set/rename-keys query-result {:id :symbol})]
+    (do
+      (println query-result-symbol "query-result-symbol")
+      (println mygene-in-local-db "mygene-in-local-db")
+      (map #(into {} %1) (set/join query-result-symbol mygene-in-local-db)))))
+(add-gene-name-to-query-results query-result mygene-in-local-db)
+mygene-in-local-db
+(def mygene-in-local-db ({:name "sonic hedgehog", :symbol "Shh"} {:name "GLI family zinc finger 3", :symbol "Gli3"} {:name "ADCYAP receptor type 1", :symbol "Adcyap1r1"}))
+mygene-in-local-db
+(def mygene-in-local-db [{:name "sonic hedgehog", :symbol "Shh"} {:name "GLI family zinc finger 3", :symbol "Gli3"} {:name "ADCYAP receptor type 1", :symbol "Adcyap1r1"}])
+mygene-in-local-db
+(add-gene-name-to-query-results query-result mygene-in-local-db)
+(defn add-gene-name-to-query-results [query-result mygene-in-local-db]
+  (let [query-result-symbol (set/rename-keys query-result {:id :symbol})]
+    (do
+      (println query-result-symbol "query-result-symbol")
+      (println mygene-in-local-db "mygene-in-local-db")
+      (println (set/join query-result-symbol mygene-in-local-db) "(set/join query-result-symbol mygene-in-local-db)")
+      (map #(into {} %1) (set/join query-result-symbol mygene-in-local-db)))))
+(add-gene-name-to-query-results query-result mygene-in-local-db)
+(set/join query-result-symbol mygene-in-local-db)
+result
+(def query-result ({:p_value 0.0331861, :ovsy_p_value 2.90255E-5, :mecvslec_logfc 0.298186, :eciivsd_p_value 0.00295655, :mecvslec_adj_p_val 0.428281, :mecvslec_aveexpr 0.212898, :eciivsd_aveexpr 0.212898, :mecvslec_t 1.43435, :ovsy_adj_p_val 5.70682E-5, :mecvslec_b -5.11103, :id "Shh", :mecvslec_p_value 0.157672, :ovsy_aveexpr 0.212898, :b -3.97282, :ovsy_t -4.5989, :t -2.19013, :eciivsd_b -2.21109, :eciivsd_adj_p_val 0.00898955, :logfc -0.628142, :ovsy_logfc -0.956067, :ovsy_b 1.6452, :eciivsd_t -3.12453, :eciivsd_logfc -0.649558, :adj_p_val 0.0897154}))
+(def mygene-in-local-db ({:name "sonic hedgehog", :symbol "Shh"} {:name "GLI family zinc finger 3", :symbol "Gli3"} {:name "ADCYAP receptor type 1", :symbol "Adcyap1r1"}))
+(set/join query-result-symbol mygene-in-local-db)
+(set/join query-result mygene-in-local-db)
+query-result
+(def query-result {:p_value 0.0331861, :symbol "Shh"})
+(set/join query-result mygene-in-local-db)
+mygene-in-local-db
+(def mygene-in-local-db ({:name "sonic hedgehog", :symbol "Shh"} {:name "GLI family zinc finger 3", :symbol "Gli3"} {:name "ADCYAP receptor type 1", :symbol "Adcyap1r1"}))
+mygene-in-local-db
+(def mygene-in-local-db [{:name "sonic hedgehog", :symbol "Shh"} {:name "GLI family zinc finger 3", :symbol "Gli3"} {:name "ADCYAP receptor type 1", :symbol "Adcyap1r1"}])
+(set/join query-result mygene-in-local-db)
+(def mygene-in-local-db {:name "sonic hedgehog", :symbol "Shh"})
+(set/join query-result mygene-in-local-db)
+query-result
+mygene-in-local-db
+(class query-result)
+(class mygene-in-local-db)
+(set/join query-result mygene-in-local-db)
+(def mygene-in-local-db ({:name "sonic hedgehog", :symbol "Shh"} {:name "GLI family zinc finger 3", :symbol "Gli3"} {:name "ADCYAP receptor type 1", :symbol "Adcyap1r1"}))
+(def query-result [{:p_value 0.0331861, :ovsy_p_value 2.90255E-5, :mecvslec_logfc 0.298186, :eciivsd_p_value 0.00295655, :mecvslec_adj_p_val 0.428281, :mecvslec_aveexpr 0.212898, :eciivsd_aveexpr 0.212898, :mecvslec_t 1.43435, :ovsy_adj_p_val 5.70682E-5, :mecvslec_b -5.11103, :id "Shh", :mecvslec_p_value 0.157672, :ovsy_aveexpr 0.212898, :b -3.97282, :ovsy_t -4.5989, :t -2.19013, :eciivsd_b -2.21109, :eciivsd_adj_p_val 0.00898955, :logfc -0.628142, :ovsy_logfc -0.956067, :ovsy_b 1.6452, :eciivsd_t -3.12453, :eciivsd_logfc -0.649558, :adj_p_val 0.0897154}])
+(def mygene-in-local-db [{:name "sonic hedgehog", :symbol "Shh"} {:name "GLI family zinc finger 3", :symbol "Gli3"} {:name "ADCYAP receptor type 1", :symbol "Adcyap1r1"}])
+(set/join query-result mygene-in-local-db)
+query-result
+(defn add-gene-name-to-query-results [query-result mygene-in-local-db]
+  (let [query-result-symbol (set/rename-keys query-result {:id :symbol})]
+    (do
+      (println query-result-symbol "query-result-symbol")
+      (println mygene-in-local-db "mygene-in-local-db")
+      (println (set/join query-result-symbol mygene-in-local-db) "(set/join query-result-symbol mygene-in-local-db)")
+      (map #(into {} %1) (set/join query-result-symbol mygene-in-local-db)))))
+(add-gene-name-to-query-results query-result mygene-in-local-db)
+(defn add-gene-name-to-query-results [query-result mygene-in-local-db]
+  (let [query-result-symbol (map #(set/rename-keys %1 {:id :symbol}) query-result]
+    (do
+      (println query-result-symbol "query-result-symbol")
+      (println mygene-in-local-db "mygene-in-local-db")
+      (println (set/join query-result-symbol mygene-in-local-db) "(set/join query-result-symbol mygene-in-local-db)")
+      (map #(into {} %1) (set/join query-result-symbol mygene-in-local-db)))))
+(add-gene-name-to-query-results query-result mygene-in-local-db)
+(defn add-gene-name-to-query-results [query-result mygene-in-local-db]
+  (do
+    (println query-result-symbol "query-result-symbol")
+    (println mygene-in-local-db "mygene-in-local-db")
+    (let [query-result-symbol (map #(set/rename-keys %1 {:id :symbol}) query-result)]
+          (println (set/join query-result-symbol mygene-in-local-db) "(set/join query-result-symbol mygene-in-local-db)")
+          (map #(into {} %1) (set/join query-result-symbol mygene-in-local-db)))))
+(defn add-gene-name-to-query-results [query-result mygene-in-local-db]
+  (do
+    (println query-result-symbol "query-result-symbol")
+    (println mygene-in-local-db "mygene-in-local-db")
+    (let [query-result-symbol (map #(set/rename-keys %1 {:id :symbol}) query-result)]
+          (println (set/join query-result-symbol mygene-in-local-db) "(set/join query-result-symbol mygene-in-local-db)")
+          (map #(into {} %1) (set/join query-result-symbol mygene-in-local-db)))))
+(defn add-gene-name-to-query-results [query-result mygene-in-local-db]
+  (do
+    (println query-result "query-result-symbol")
+    (println mygene-in-local-db "mygene-in-local-db")
+    (let [query-result-symbol (map #(set/rename-keys %1 {:id :symbol}) query-result)]
+          (println (set/join query-result-symbol mygene-in-local-db) "(set/join query-result-symbol mygene-in-local-db)")
+          (map #(into {} %1) (set/join query-result-symbol mygene-in-local-db)))))
+(add-gene-name-to-query-results query-result mygene-in-local-db)
+(defn add-gene-name-to-query-results [query-result mygene-in-local-db]
+    (let [query-result-symbol (map #(set/rename-keys %1 {:id :symbol}) query-result)]
+          (map #(into {} %1) (set/join query-result-symbol mygene-in-local-db))))
+(add-gene-name-to-query-results query-result mygene-in-local-db)
+query-result
+mygene-in-local-db
+(add-gene-name-to-query-results query-result mygene-in-local-db)
+(class (add-gene-name-to-query-results query-result mygene-in-local-db))
+(use '[rna.db.core :as db]) 
+(db/get-toptable "eciivsd_adj_p_val")
+(db/get-toptable {:col "eciivsd_adj_p_val"})
+(use '[rna.db.core :as db]) 
+(db/get-toptable {:col "eciivsd_adj_p_val"})
+(db/get-gene {:id "shh"})
+(db/get-toptable {:col "eciivsd_adj_p_val"})
+d
+(def h {:p_value 0.165135, :ovsy_p_value 2.91161E-14, :mecvslec_logfc 0.0119934, :eciivsd_p_value 0.158953, :mecvslec_adj_p_val 0.899378, :mecvslec_aveexpr 6.11175, :eciivsd_aveexpr 6.11175, :mecvslec_t 0.333395, :ovsy_adj_p_val 1.22389E-13, :mecvslec_b -7.18503, :id "Zzz3", :mecvslec_p_value 0.740224, :ovsy_aveexpr 6.11175, :b -6.37047, :ovsy_t 10.4965, :t 1.40853, :eciivsd_b -6.83566, :eciivsd_adj_p_val 0.262847, :logfc 0.070956, :ovsy_logfc 0.377593, :ovsy_b 21.2299, :eciivsd_t 1.42985, :eciivsd_logfc 0.0514366, :adj_p_val 0.307311})
+h
+(keys h)
+(filter #(.contains %1 "eciivsd")  (keys h))
+(filter #(.contains %1 "eciivsd")  (map str (keys h)))
+(map #(keyword %1) (filter #(.contains %1 "eciivsd")  (map str (keys h))))
+(map #(keyword %1) (filter #(.contains %1 "eciivsd")  (map name (keys h))))
+(def query-result [{:p_value 0.0331861, :ovsy_p_value 2.90255E-5, :mecvslec_logfc 0.298186, :eciivsd_p_value 0.00295655, :mecvslec_adj_p_val 0.428281, :mecvslec_aveexpr 0.212898, :eciivsd_aveexpr 0.212898, :mecvslec_t 1.43435, :ovsy_adj_p_val 5.70682E-5, :mecvslec_b -5.11103, :id "Shh", :mecvslec_p_value 0.157672, :ovsy_aveexpr 0.212898, :b -3.97282, :ovsy_t -4.5989, :t -2.19013, :eciivsd_b -2.21109, :eciivsd_adj_p_val 0.00898955, :logfc -0.628142, :ovsy_logfc -0.956067, :ovsy_b 1.6452, :eciivsd_t -3.12453, :eciivsd_logfc -0.649558, :adj_p_val 0.0897154}])
+(def d (first query-result))
+d
+(items d)
+(seq d)
+(clojure.string/replace [:p_value 0.0331861] "p_" "")
+(def toptable-results [{:p_value 8.02769E-5, :ovsy_p_value 5.28397E-22, :mecvslec_logfc -0.185605, :eciivsd_p_value 1.52756E-5, :mecvslec_adj_p_val 0.00918781, :mecvslec_aveexpr 11.3112, :eciivsd_aveexpr 11.3112, :mecvslec_t -3.61234, :ovsy_adj_p_val 4.78072E-21, :mecvslec_b -1.43422, :id "Zwint", :mecvslec_p_value 7.0078E-4, :ovsy_aveexpr 11.3112, :b 0.546756, :ovsy_t -16.5744, :t -4.29369, :eciivsd_b 1.67929, :eciivsd_adj_p_val 8.67177E-5, :logfc -0.311997, :ovsy_logfc -0.851604, :ovsy_b 39.2024, :eciivsd_t -4.788, :eciivsd_logfc -0.246011, :adj_p_val 6.10449E-4} {:p_value 0.261977, :ovsy_p_value 0.350712, :mecvslec_logfc 0.235577, :eciivsd_p_value 0.0433745, :mecvslec_adj_p_val 0.0133941, :mecvslec_aveexpr 5.19365, :eciivsd_aveexpr 5.19365, :mecvslec_t 3.45587, :ovsy_adj_p_val 0.420018, :mecvslec_b -1.71747, :id "Zyx", :mecvslec_p_value 0.00112477, :ovsy_aveexpr 5.19365, :b -6.64065, :ovsy_t 0.941982, :t 1.13449, :eciivsd_b -5.66063, :eciivsd_adj_p_val 0.0904392, :logfc 0.105676, :ovsy_logfc 0.0642123, :ovsy_b -7.93893, :eciivsd_t 2.07247, :eciivsd_logfc 0.141275, :adj_p_val 0.429254} {:p_value 0.165135, :ovsy_p_value 2.91161E-14, :mecvslec_logfc 0.0119934, :eciivsd_p_value 0.158953, :mecvslec_adj_p_val 0.899378, :mecvslec_aveexpr 6.11175, :eciivsd_aveexpr 6.11175, :mecvslec_t 0.333395, :ovsy_adj_p_val 1.22389E-13, :mecvslec_b -7.18503, :id "Zzz3", :mecvslec_p_value 0.740224, :ovsy_aveexpr 6.11175, :b -6.37047, :ovsy_t 10.4965, :t 1.40853, :eciivsd_b -6.83566, :eciivsd_adj_p_val 0.262847, :logfc 0.070956, :ovsy_logfc 0.377593, :ovsy_b 21.2299, :eciivsd_t 1.42985, :eciivsd_logfc 0.0514366, :adj_p_val 0.307311}])
+toptable-results
+(map #(print %1) toptable-results)
+(map #(print %1) (seq toptable-results))
+(class (map #(print %1) (seq toptable-results)))
+(class (first (map #(print %1) (seq toptable-results))))
+(doseq [keyval toptable-results (prn keyval)
+)
+(doseq [keyval toptable-results] (prn keyval))
+(doseq [keyval toptable-results] (prn "a" keyval))
+(for [[k v] toptable-results] (prn k))
+(for [[k v] (seq toptable-results)] (prn k))
+(for [kv (seq toptable-results)] (prn k))
+(for [kv (seq toptable-results)] (prn kv))
+(for [d (seq toptable-results)] (for [[k v] in d (prn k)))
+(for [d (seq toptable-results)] (for [[k v] d] (prn k)))
+(for [d (seq toptable-results)] (for [[k v] d] ((clojure.string/replace k "_" " ")))
+)
+(for [d (seq toptable-results)] (for [[k v] d] (clojure.string/replace k "_" " "))
+)

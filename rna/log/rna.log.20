@@ -1,0 +1,1364 @@
+[2017-07-13 10:51:15,896][ERROR][rna.middleware] #error {
+ :cause Assert failed: Query argument mismatch.
+Expected keys: (:col :p)
+Actual keys: 
+Missing keys: (:col :p)
+(empty? missing-keys)
+ :via
+ [{:type java.lang.AssertionError
+   :message Assert failed: Query argument mismatch.
+Expected keys: (:col :p)
+Actual keys: 
+Missing keys: (:col :p)
+(empty? missing-keys)
+   :at [yesql.generate$rewrite_query_for_jdbc invokeStatic generate.clj 41]}]
+ :trace
+ [[yesql.generate$rewrite_query_for_jdbc invokeStatic generate.clj 41]
+  [yesql.generate$rewrite_query_for_jdbc invoke generate.clj 35]
+  [yesql.generate$generate_query_fn$real_fn__5521 invoke generate.clj 121]
+  [yesql.generate$generate_query_fn$query_wrapper_fn__5528 invoke generate.clj 142]
+  [clojure.lang.AFn applyToHelper AFn.java 156]
+  [clojure.lang.AFn applyTo AFn.java 144]
+  [clojure.lang.AFunction$1 doInvoke AFunction.java 29]
+  [clojure.lang.RestFn invoke RestFn.java 421]
+  [clojure.lang.Var invoke Var.java 383]
+  [rna.db.core$eval5842$iter__5843__5847$fn__5848$fn__5849$iter__5850__5854$fn__5855$fn__5861 invoke core.clj 34]
+  [rna.routes.home$toptable_page invokeStatic home.clj 22]
+  [rna.routes.home$toptable_page invoke home.clj 20]
+  [rna.routes.home$fn__17099 invokeStatic home.clj 110]
+  [rna.routes.home$fn__17099 invoke home.clj 110]
+  [compojure.core$make_route$fn__1818 invoke core.clj 130]
+  [compojure.core$pre_init$fn__1905 invoke core.clj 256]
+  [ring.middleware.anti_forgery$wrap_anti_forgery$fn__4885 invoke anti_forgery.clj 90]
+  [compojure.core$pre_init$fn__1907$fn__1908 invoke core.clj 259]
+  [compojure.core$wrap_route_middleware$fn__1814 invoke core.clj 117]
+  [compojure.core$if_route$fn__1786 invoke core.clj 41]
+  [compojure.core$if_method$fn__1778 invoke core.clj 27]
+  [compojure.core$routing$fn__1825 invoke core.clj 144]
+  [clojure.core$some invokeStatic core.clj 2592]
+  [clojure.core$some invoke core.clj 2583]
+  [compojure.core$routing invokeStatic core.clj 144]
+  [compojure.core$routing doInvoke core.clj 141]
+  [clojure.lang.RestFn applyTo RestFn.java 139]
+  [clojure.core$apply invokeStatic core.clj 648]
+  [clojure.core$apply invoke core.clj 641]
+  [compojure.core$routes$fn__1829 invoke core.clj 149]
+  [clojure.lang.Var invoke Var.java 379]
+  [compojure.core$wrap_routes$fn__1913 invoke core.clj 267]
+  [compojure.core$routing$fn__1825 invoke core.clj 144]
+  [clojure.core$some invokeStatic core.clj 2592]
+  [clojure.core$some invoke core.clj 2583]
+  [compojure.core$routing invokeStatic core.clj 144]
+  [compojure.core$routing doInvoke core.clj 141]
+  [clojure.lang.RestFn applyTo RestFn.java 139]
+  [clojure.core$apply invokeStatic core.clj 648]
+  [clojure.core$apply invoke core.clj 641]
+  [compojure.core$routes$fn__1829 invoke core.clj 149]
+  [clojure.lang.Var invoke Var.java 379]
+  [ring.middleware.reload$wrap_reload$fn__13095 invoke reload.clj 22]
+  [selmer.middleware$wrap_error_page$fn__13114 invoke middleware.clj 9]
+  [prone.middleware$wrap_exceptions$fn__13309 invoke middleware.clj 119]
+  [ring.middleware.format_params$wrap_format_params$fn__11712 invoke format_params.clj 119]
+  [ring.middleware.format_params$wrap_format_params$fn__11712 invoke format_params.clj 119]
+  [ring.middleware.format_params$wrap_format_params$fn__11712 invoke format_params.clj 119]
+  [ring.middleware.format_response$wrap_format_response$fn__12475 invoke format_response.clj 183]
+  [rna.middleware$wrap_formats$fn__13342 invoke middleware.clj 54]
+  [ring.middleware.webjars$wrap_webjars$fn__8789 invoke webjars.clj 34]
+  [ring.middleware.flash$wrap_flash$fn__6481 invoke flash.clj 35]
+  [immutant.web.internal.undertow$wrap_undertow_session$fn__13445 invoke undertow.clj 72]
+  [ring.middleware.keyword_params$wrap_keyword_params$fn__9874 invoke keyword_params.clj 35]
+  [ring.middleware.nested_params$wrap_nested_params$fn__9926 invoke nested_params.clj 84]
+  [ring.middleware.multipart_params$wrap_multipart_params$fn__9971 invoke multipart_params.clj 117]
+  [ring.middleware.params$wrap_params$fn__9999 invoke params.clj 64]
+  [ring.middleware.cookies$wrap_cookies$fn__9713 invoke cookies.clj 161]
+  [ring.middleware.absolute_redirects$wrap_absolute_redirects$fn__10143 invoke absolute_redirects.clj 36]
+  [ring.middleware.resource$wrap_resource$fn__10021 invoke resource.clj 28]
+  [ring.middleware.content_type$wrap_content_type$fn__10096 invoke content_type.clj 30]
+  [ring.middleware.default_charset$wrap_default_charset$fn__10118 invoke default_charset.clj 26]
+  [ring.middleware.not_modified$wrap_not_modified$fn__10075 invoke not_modified.clj 52]
+  [ring.middleware.x_headers$wrap_xss_protection$fn__8829 invoke x_headers.clj 71]
+  [ring.middleware.x_headers$wrap_frame_options$fn__8817 invoke x_headers.clj 38]
+  [ring.middleware.x_headers$wrap_content_type_options$fn__8823 invoke x_headers.clj 53]
+  [rna.middleware$wrap_context$fn__13331 invoke middleware.clj 27]
+  [rna.middleware$wrap_internal_error$fn__13337 invoke middleware.clj 32]
+  [immutant.web.internal.undertow$create_http_handler$reify__13517 handleRequest undertow.clj 135]
+  [org.projectodd.wunderboss.web.undertow.async.websocket.UndertowWebsocket$2 handleRequest UndertowWebsocket.java 104]
+  [io.undertow.server.session.SessionAttachmentHandler handleRequest SessionAttachmentHandler.java 68]
+  [io.undertow.server.Connectors executeRootHandler Connectors.java 199]
+  [io.undertow.server.HttpServerExchange$1 run HttpServerExchange.java 778]
+  [java.util.concurrent.ThreadPoolExecutor runWorker ThreadPoolExecutor.java 1142]
+  [java.util.concurrent.ThreadPoolExecutor$Worker run ThreadPoolExecutor.java 617]
+  [java.lang.Thread run Thread.java 745]]}
+[2017-07-13 10:52:10,887][ERROR][rna.middleware] #error {
+ :cause Assert failed: Query argument mismatch.
+Expected keys: (:col :p)
+Actual keys: (:col)
+Missing keys: (:p)
+(empty? missing-keys)
+ :via
+ [{:type java.lang.AssertionError
+   :message Assert failed: Query argument mismatch.
+Expected keys: (:col :p)
+Actual keys: (:col)
+Missing keys: (:p)
+(empty? missing-keys)
+   :at [yesql.generate$rewrite_query_for_jdbc invokeStatic generate.clj 41]}]
+ :trace
+ [[yesql.generate$rewrite_query_for_jdbc invokeStatic generate.clj 41]
+  [yesql.generate$rewrite_query_for_jdbc invoke generate.clj 35]
+  [yesql.generate$generate_query_fn$real_fn__5521 invoke generate.clj 121]
+  [yesql.generate$generate_query_fn$query_wrapper_fn__5528 invoke generate.clj 142]
+  [clojure.lang.AFn applyToHelper AFn.java 156]
+  [clojure.lang.AFn applyTo AFn.java 144]
+  [clojure.lang.AFunction$1 doInvoke AFunction.java 29]
+  [clojure.lang.RestFn invoke RestFn.java 421]
+  [clojure.lang.Var invoke Var.java 383]
+  [rna.db.core$eval5842$iter__5843__5847$fn__5848$fn__5849$iter__5850__5854$fn__5855$fn__5861 invoke core.clj 34]
+  [rna.routes.home$toptable_page invokeStatic home.clj 22]
+  [rna.routes.home$toptable_page invoke home.clj 20]
+  [rna.routes.home$fn__17260 invokeStatic home.clj 110]
+  [rna.routes.home$fn__17260 invoke home.clj 110]
+  [compojure.core$make_route$fn__1818 invoke core.clj 130]
+  [compojure.core$pre_init$fn__1905 invoke core.clj 256]
+  [ring.middleware.anti_forgery$wrap_anti_forgery$fn__4885 invoke anti_forgery.clj 90]
+  [compojure.core$pre_init$fn__1907$fn__1908 invoke core.clj 259]
+  [compojure.core$wrap_route_middleware$fn__1814 invoke core.clj 117]
+  [compojure.core$if_route$fn__1786 invoke core.clj 41]
+  [compojure.core$if_method$fn__1778 invoke core.clj 27]
+  [compojure.core$routing$fn__1825 invoke core.clj 144]
+  [clojure.core$some invokeStatic core.clj 2592]
+  [clojure.core$some invoke core.clj 2583]
+  [compojure.core$routing invokeStatic core.clj 144]
+  [compojure.core$routing doInvoke core.clj 141]
+  [clojure.lang.RestFn applyTo RestFn.java 139]
+  [clojure.core$apply invokeStatic core.clj 648]
+  [clojure.core$apply invoke core.clj 641]
+  [compojure.core$routes$fn__1829 invoke core.clj 149]
+  [clojure.lang.Var invoke Var.java 379]
+  [compojure.core$wrap_routes$fn__1913 invoke core.clj 267]
+  [compojure.core$routing$fn__1825 invoke core.clj 144]
+  [clojure.core$some invokeStatic core.clj 2592]
+  [clojure.core$some invoke core.clj 2583]
+  [compojure.core$routing invokeStatic core.clj 144]
+  [compojure.core$routing doInvoke core.clj 141]
+  [clojure.lang.RestFn applyTo RestFn.java 139]
+  [clojure.core$apply invokeStatic core.clj 648]
+  [clojure.core$apply invoke core.clj 641]
+  [compojure.core$routes$fn__1829 invoke core.clj 149]
+  [clojure.lang.Var invoke Var.java 379]
+  [ring.middleware.reload$wrap_reload$fn__13095 invoke reload.clj 22]
+  [selmer.middleware$wrap_error_page$fn__13114 invoke middleware.clj 9]
+  [prone.middleware$wrap_exceptions$fn__13309 invoke middleware.clj 119]
+  [ring.middleware.format_params$wrap_format_params$fn__11712 invoke format_params.clj 119]
+  [ring.middleware.format_params$wrap_format_params$fn__11712 invoke format_params.clj 119]
+  [ring.middleware.format_params$wrap_format_params$fn__11712 invoke format_params.clj 119]
+  [ring.middleware.format_response$wrap_format_response$fn__12475 invoke format_response.clj 183]
+  [rna.middleware$wrap_formats$fn__13342 invoke middleware.clj 54]
+  [ring.middleware.webjars$wrap_webjars$fn__8789 invoke webjars.clj 34]
+  [ring.middleware.flash$wrap_flash$fn__6481 invoke flash.clj 35]
+  [immutant.web.internal.undertow$wrap_undertow_session$fn__13445 invoke undertow.clj 72]
+  [ring.middleware.keyword_params$wrap_keyword_params$fn__9874 invoke keyword_params.clj 35]
+  [ring.middleware.nested_params$wrap_nested_params$fn__9926 invoke nested_params.clj 84]
+  [ring.middleware.multipart_params$wrap_multipart_params$fn__9971 invoke multipart_params.clj 117]
+  [ring.middleware.params$wrap_params$fn__9999 invoke params.clj 64]
+  [ring.middleware.cookies$wrap_cookies$fn__9713 invoke cookies.clj 161]
+  [ring.middleware.absolute_redirects$wrap_absolute_redirects$fn__10143 invoke absolute_redirects.clj 36]
+  [ring.middleware.resource$wrap_resource$fn__10021 invoke resource.clj 28]
+  [ring.middleware.content_type$wrap_content_type$fn__10096 invoke content_type.clj 30]
+  [ring.middleware.default_charset$wrap_default_charset$fn__10118 invoke default_charset.clj 26]
+  [ring.middleware.not_modified$wrap_not_modified$fn__10075 invoke not_modified.clj 52]
+  [ring.middleware.x_headers$wrap_xss_protection$fn__8829 invoke x_headers.clj 71]
+  [ring.middleware.x_headers$wrap_frame_options$fn__8817 invoke x_headers.clj 38]
+  [ring.middleware.x_headers$wrap_content_type_options$fn__8823 invoke x_headers.clj 53]
+  [rna.middleware$wrap_context$fn__13331 invoke middleware.clj 27]
+  [rna.middleware$wrap_internal_error$fn__13337 invoke middleware.clj 32]
+  [immutant.web.internal.undertow$create_http_handler$reify__13517 handleRequest undertow.clj 135]
+  [org.projectodd.wunderboss.web.undertow.async.websocket.UndertowWebsocket$2 handleRequest UndertowWebsocket.java 104]
+  [io.undertow.server.session.SessionAttachmentHandler handleRequest SessionAttachmentHandler.java 68]
+  [io.undertow.server.Connectors executeRootHandler Connectors.java 199]
+  [io.undertow.server.HttpServerExchange$1 run HttpServerExchange.java 778]
+  [java.util.concurrent.ThreadPoolExecutor runWorker ThreadPoolExecutor.java 1142]
+  [java.util.concurrent.ThreadPoolExecutor$Worker run ThreadPoolExecutor.java 617]
+  [java.lang.Thread run Thread.java 745]]}
+[2017-07-13 10:52:49,751][ERROR][rna.middleware] #error {
+ :cause Assert failed: Query argument mismatch.
+Expected keys: (:col :p)
+Actual keys: (:col)
+Missing keys: (:p)
+(empty? missing-keys)
+ :via
+ [{:type java.lang.AssertionError
+   :message Assert failed: Query argument mismatch.
+Expected keys: (:col :p)
+Actual keys: (:col)
+Missing keys: (:p)
+(empty? missing-keys)
+   :at [yesql.generate$rewrite_query_for_jdbc invokeStatic generate.clj 41]}]
+ :trace
+ [[yesql.generate$rewrite_query_for_jdbc invokeStatic generate.clj 41]
+  [yesql.generate$rewrite_query_for_jdbc invoke generate.clj 35]
+  [yesql.generate$generate_query_fn$real_fn__5521 invoke generate.clj 121]
+  [yesql.generate$generate_query_fn$query_wrapper_fn__5528 invoke generate.clj 142]
+  [clojure.lang.AFn applyToHelper AFn.java 156]
+  [clojure.lang.AFn applyTo AFn.java 144]
+  [clojure.lang.AFunction$1 doInvoke AFunction.java 29]
+  [clojure.lang.RestFn invoke RestFn.java 421]
+  [clojure.lang.Var invoke Var.java 383]
+  [rna.db.core$eval5842$iter__5843__5847$fn__5848$fn__5849$iter__5850__5854$fn__5855$fn__5861 invoke core.clj 34]
+  [rna.routes.home$toptable_page invokeStatic home.clj 22]
+  [rna.routes.home$toptable_page invoke home.clj 20]
+  [rna.routes.home$fn__17260 invokeStatic home.clj 110]
+  [rna.routes.home$fn__17260 invoke home.clj 110]
+  [compojure.core$make_route$fn__1818 invoke core.clj 130]
+  [compojure.core$pre_init$fn__1905 invoke core.clj 256]
+  [ring.middleware.anti_forgery$wrap_anti_forgery$fn__4885 invoke anti_forgery.clj 90]
+  [compojure.core$pre_init$fn__1907$fn__1908 invoke core.clj 259]
+  [compojure.core$wrap_route_middleware$fn__1814 invoke core.clj 117]
+  [compojure.core$if_route$fn__1786 invoke core.clj 41]
+  [compojure.core$if_method$fn__1778 invoke core.clj 27]
+  [compojure.core$routing$fn__1825 invoke core.clj 144]
+  [clojure.core$some invokeStatic core.clj 2592]
+  [clojure.core$some invoke core.clj 2583]
+  [compojure.core$routing invokeStatic core.clj 144]
+  [compojure.core$routing doInvoke core.clj 141]
+  [clojure.lang.RestFn applyTo RestFn.java 139]
+  [clojure.core$apply invokeStatic core.clj 648]
+  [clojure.core$apply invoke core.clj 641]
+  [compojure.core$routes$fn__1829 invoke core.clj 149]
+  [clojure.lang.Var invoke Var.java 379]
+  [compojure.core$wrap_routes$fn__1913 invoke core.clj 267]
+  [compojure.core$routing$fn__1825 invoke core.clj 144]
+  [clojure.core$some invokeStatic core.clj 2592]
+  [clojure.core$some invoke core.clj 2583]
+  [compojure.core$routing invokeStatic core.clj 144]
+  [compojure.core$routing doInvoke core.clj 141]
+  [clojure.lang.RestFn applyTo RestFn.java 139]
+  [clojure.core$apply invokeStatic core.clj 648]
+  [clojure.core$apply invoke core.clj 641]
+  [compojure.core$routes$fn__1829 invoke core.clj 149]
+  [clojure.lang.Var invoke Var.java 379]
+  [ring.middleware.reload$wrap_reload$fn__13095 invoke reload.clj 22]
+  [selmer.middleware$wrap_error_page$fn__13114 invoke middleware.clj 9]
+  [prone.middleware$wrap_exceptions$fn__13309 invoke middleware.clj 119]
+  [ring.middleware.format_params$wrap_format_params$fn__11712 invoke format_params.clj 119]
+  [ring.middleware.format_params$wrap_format_params$fn__11712 invoke format_params.clj 119]
+  [ring.middleware.format_params$wrap_format_params$fn__11712 invoke format_params.clj 119]
+  [ring.middleware.format_response$wrap_format_response$fn__12475 invoke format_response.clj 183]
+  [rna.middleware$wrap_formats$fn__13342 invoke middleware.clj 54]
+  [ring.middleware.webjars$wrap_webjars$fn__8789 invoke webjars.clj 34]
+  [ring.middleware.flash$wrap_flash$fn__6481 invoke flash.clj 35]
+  [immutant.web.internal.undertow$wrap_undertow_session$fn__13445 invoke undertow.clj 72]
+  [ring.middleware.keyword_params$wrap_keyword_params$fn__9874 invoke keyword_params.clj 35]
+  [ring.middleware.nested_params$wrap_nested_params$fn__9926 invoke nested_params.clj 84]
+  [ring.middleware.multipart_params$wrap_multipart_params$fn__9971 invoke multipart_params.clj 117]
+  [ring.middleware.params$wrap_params$fn__9999 invoke params.clj 64]
+  [ring.middleware.cookies$wrap_cookies$fn__9713 invoke cookies.clj 161]
+  [ring.middleware.absolute_redirects$wrap_absolute_redirects$fn__10143 invoke absolute_redirects.clj 36]
+  [ring.middleware.resource$wrap_resource$fn__10021 invoke resource.clj 28]
+  [ring.middleware.content_type$wrap_content_type$fn__10096 invoke content_type.clj 30]
+  [ring.middleware.default_charset$wrap_default_charset$fn__10118 invoke default_charset.clj 26]
+  [ring.middleware.not_modified$wrap_not_modified$fn__10075 invoke not_modified.clj 52]
+  [ring.middleware.x_headers$wrap_xss_protection$fn__8829 invoke x_headers.clj 71]
+  [ring.middleware.x_headers$wrap_frame_options$fn__8817 invoke x_headers.clj 38]
+  [ring.middleware.x_headers$wrap_content_type_options$fn__8823 invoke x_headers.clj 53]
+  [rna.middleware$wrap_context$fn__13331 invoke middleware.clj 27]
+  [rna.middleware$wrap_internal_error$fn__13337 invoke middleware.clj 32]
+  [immutant.web.internal.undertow$create_http_handler$reify__13517 handleRequest undertow.clj 135]
+  [org.projectodd.wunderboss.web.undertow.async.websocket.UndertowWebsocket$2 handleRequest UndertowWebsocket.java 104]
+  [io.undertow.server.session.SessionAttachmentHandler handleRequest SessionAttachmentHandler.java 68]
+  [io.undertow.server.Connectors executeRootHandler Connectors.java 199]
+  [io.undertow.server.HttpServerExchange$1 run HttpServerExchange.java 778]
+  [java.util.concurrent.ThreadPoolExecutor runWorker ThreadPoolExecutor.java 1142]
+  [java.util.concurrent.ThreadPoolExecutor$Worker run ThreadPoolExecutor.java 617]
+  [java.lang.Thread run Thread.java 745]]}
+[2017-07-13 10:53:03,843][INFO][luminus.repl-server] nREPL server stopped
+[2017-07-13 10:53:03,846][INFO][rna.handler] rna is shutting down...
+[2017-07-13 10:53:03,849][INFO][com.zaxxer.hikari.pool.HikariPool] HikariPool-0 - is closing down.
+[2017-07-13 10:53:03,855][INFO][rna.handler] #'rna.db.core/*db* stopped
+[2017-07-13 10:53:03,856][INFO][rna.handler] shutdown complete!
+[2017-07-13 10:53:03,860][DEBUG][org.projectodd.wunderboss.WunderBoss] Returning existing component for org.projectodd.wunderboss.web.Web:115062141, ignoring options.
+[2017-07-13 10:53:03,877][INFO][luminus.http-server] HTTP server stopped
+[2017-07-13 10:54:18,514][DEBUG][org.jboss.logging] Logging Provider: org.jboss.logging.Log4jLoggerProvider
+[2017-07-13 10:54:19,649][INFO][luminus.repl-server] nREPL server started on port 7000
+[2017-07-13 10:54:19,658][INFO][com.zaxxer.hikari.HikariDataSource] HikariPool-0 - is starting.
+[2017-07-13 10:54:19,931][INFO][rna.handler] #'rna.db.core/*db* started
+[2017-07-13 10:54:19,931][INFO][rna.config] 
+-=[rna started successfully using the development profile]=-
+[2017-07-13 10:54:20,022][INFO][org.xnio] XNIO version 3.4.0.Beta1
+[2017-07-13 10:54:20,104][INFO][org.xnio.nio] XNIO NIO Implementation Version 3.4.0.Beta1
+[2017-07-13 10:54:20,180][INFO][org.projectodd.wunderboss.web.Web] Registered web context /
+[2017-07-13 10:54:20,181][INFO][luminus.http-server] server started on port 8080
+[2017-07-13 12:04:45,427][DEBUG][io.undertow.request.io] UT005013: An IOException occurred
+java.nio.channels.ClosedChannelException
+	at sun.nio.ch.SocketChannelImpl.ensureWriteOpen(SocketChannelImpl.java:270)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:494)
+	at org.xnio.nio.NioSocketConduit.write(NioSocketConduit.java:162)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:621)
+	at io.undertow.conduits.ChunkedStreamSinkConduit.doWrite(ChunkedStreamSinkConduit.java:169)
+	at io.undertow.conduits.ChunkedStreamSinkConduit.writeFinal(ChunkedStreamSinkConduit.java:237)
+	at org.xnio.conduits.ConduitStreamSinkChannel.writeFinal(ConduitStreamSinkChannel.java:104)
+	at io.undertow.channels.DetachableStreamSinkChannel.writeFinal(DetachableStreamSinkChannel.java:195)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.writeFinal(HttpServerExchange.java:1902)
+	at io.undertow.io.UndertowOutputStream.writeBufferBlocking(UndertowOutputStream.java:291)
+	at io.undertow.io.UndertowOutputStream.close(UndertowOutputStream.java:334)
+	at io.undertow.server.HttpServerExchange$DefaultBlockingHttpExchange.close(HttpServerExchange.java:1768)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1487)
+	at io.undertow.server.AbstractServerConnection$CloseSetter.handleEvent(AbstractServerConnection.java:304)
+	at io.undertow.server.AbstractServerConnection$CloseSetter.handleEvent(AbstractServerConnection.java:284)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.StreamConnection.invokeCloseListener(StreamConnection.java:80)
+	at org.xnio.Connection.close(Connection.java:142)
+	at io.undertow.server.AbstractServerConnection.close(AbstractServerConnection.java:147)
+	at org.xnio.IoUtils.safeClose(IoUtils.java:152)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:623)
+	at io.undertow.conduits.ChunkedStreamSinkConduit.doWrite(ChunkedStreamSinkConduit.java:163)
+	at io.undertow.conduits.ChunkedStreamSinkConduit.write(ChunkedStreamSinkConduit.java:127)
+	at io.undertow.conduits.ChunkedStreamSinkConduit.write(ChunkedStreamSinkConduit.java:216)
+	at org.xnio.conduits.ConduitStreamSinkChannel.write(ConduitStreamSinkChannel.java:158)
+	at io.undertow.channels.DetachableStreamSinkChannel.write(DetachableStreamSinkChannel.java:179)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.write(HttpServerExchange.java:1888)
+	at org.xnio.channels.Channels.writeBlocking(Channels.java:152)
+	at io.undertow.io.UndertowOutputStream.write(UndertowOutputStream.java:182)
+	at io.undertow.io.UndertowOutputStream.write(UndertowOutputStream.java:102)
+	at immutant.web.internal.ring$eval8568$fn__8569.invoke(ring.clj:126)
+	at immutant.web.internal.ring$eval8539$fn__8540$G__8530__8549.invoke(ring.clj:112)
+	at immutant.web.internal.ring$write_response.invokeStatic(ring.clj:153)
+	at immutant.web.internal.ring$write_response.invoke(ring.clj:142)
+	at immutant.web.internal.undertow$create_http_handler$reify__13570.handleRequest(undertow.clj:138)
+	at org.projectodd.wunderboss.web.undertow.async.websocket.UndertowWebsocket$2.handleRequest(UndertowWebsocket.java:104)
+	at io.undertow.server.session.SessionAttachmentHandler.handleRequest(SessionAttachmentHandler.java:68)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:199)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-07-13 12:04:45,433][ERROR][io.undertow.request] Undertow request failed HttpServerExchange{ POST /toptable request {Accept=[text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8], Accept-Language=[en-US,en;q=0.8,da;q=0.6,nb;q=0.4], Cache-Control=[max-age=0], Accept-Encoding=[gzip, deflate], Origin=[http://tare.medisin.ntnu.no:8080], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36], Connection=[keep-alive], Content-Length=[142], Content-Type=[application/x-www-form-urlencoded], Cookie=[JSESSIONID=IjHC4FZUk09jOeCgOYVxSXczyR7n9ZMTpAE7L3qf], Referer=[http://tare.medisin.ntnu.no:8080/browse], Upgrade-Insecure-Requests=[1], Host=[tare.medisin.ntnu.no:8080]} response {Connection=[keep-alive], Server=[undertow], X-XSS-Protection=[1; mode=block], X-Content-Type-Options=[nosniff], X-Frame-Options=[SAMEORIGIN], Transfer-Encoding=[chunked], Content-Type=[text/html; charset=utf-8], Date=[Thu, 13 Jul 2017 10:04:44 GMT]}}
+java.io.IOException: Broken pipe
+	at sun.nio.ch.FileDispatcherImpl.writev0(Native Method)
+	at sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:148)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:504)
+	at org.xnio.nio.NioSocketConduit.write(NioSocketConduit.java:162)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:621)
+	at io.undertow.conduits.ChunkedStreamSinkConduit.doWrite(ChunkedStreamSinkConduit.java:163)
+	at io.undertow.conduits.ChunkedStreamSinkConduit.write(ChunkedStreamSinkConduit.java:127)
+	at io.undertow.conduits.ChunkedStreamSinkConduit.write(ChunkedStreamSinkConduit.java:216)
+	at org.xnio.conduits.ConduitStreamSinkChannel.write(ConduitStreamSinkChannel.java:158)
+	at io.undertow.channels.DetachableStreamSinkChannel.write(DetachableStreamSinkChannel.java:179)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.write(HttpServerExchange.java:1888)
+	at org.xnio.channels.Channels.writeBlocking(Channels.java:152)
+	at io.undertow.io.UndertowOutputStream.write(UndertowOutputStream.java:182)
+	at io.undertow.io.UndertowOutputStream.write(UndertowOutputStream.java:102)
+	at immutant.web.internal.ring$eval8568$fn__8569.invoke(ring.clj:126)
+	at immutant.web.internal.ring$eval8539$fn__8540$G__8530__8549.invoke(ring.clj:112)
+	at immutant.web.internal.ring$write_response.invokeStatic(ring.clj:153)
+	at immutant.web.internal.ring$write_response.invoke(ring.clj:142)
+	at immutant.web.internal.undertow$create_http_handler$reify__13570.handleRequest(undertow.clj:138)
+	at org.projectodd.wunderboss.web.undertow.async.websocket.UndertowWebsocket$2.handleRequest(UndertowWebsocket.java:104)
+	at io.undertow.server.session.SessionAttachmentHandler.handleRequest(SessionAttachmentHandler.java:68)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:199)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-07-14 08:36:09,610][DEBUG][org.jboss.logging] Logging Provider: org.jboss.logging.Log4jLoggerProvider
+[2017-07-14 08:36:10,704][INFO][luminus.repl-server] nREPL server started on port 7000
+[2017-07-14 08:36:10,712][INFO][com.zaxxer.hikari.HikariDataSource] HikariPool-0 - is starting.
+[2017-07-14 08:36:11,110][INFO][rna.handler] #'rna.db.core/*db* started
+[2017-07-14 08:36:11,110][INFO][rna.config] 
+-=[rna started successfully using the development profile]=-
+[2017-07-14 08:36:11,231][INFO][org.xnio] XNIO version 3.4.0.Beta1
+[2017-07-14 08:36:11,517][INFO][org.xnio.nio] XNIO NIO Implementation Version 3.4.0.Beta1
+[2017-07-14 08:36:11,614][INFO][org.projectodd.wunderboss.web.Web] Registered web context /
+[2017-07-14 08:36:11,615][INFO][luminus.http-server] server started on port 8080
+[2017-07-14 18:36:03,855][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-14 18:58:09,547][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-14 23:34:54,649][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-15 03:09:44,556][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-15 05:33:01,404][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-15 05:40:56,304][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-15 11:20:48,084][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-15 19:43:13,732][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-15 22:05:22,797][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-16 03:49:47,174][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-16 10:26:57,775][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-16 10:38:45,222][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-16 22:40:36,938][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-17 08:03:25,962][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-17 08:41:30,412][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-17 12:23:50,480][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-17 15:02:02,502][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-17 15:36:21,347][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-17 21:19:40,352][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-17 23:49:31,798][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 08:01:29,435][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 09:40:38,750][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 12:07:11,921][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 12:26:05,461][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 14:39:48,859][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 15:26:42,664][DEBUG][io.undertow.request.io] UT005013: An IOException occurred
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.writev0(Native Method)
+	at sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:148)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:504)
+	at org.xnio.nio.NioSocketConduit.write(NioSocketConduit.java:162)
+	at io.undertow.server.protocol.http.HttpResponseConduit.processWrite(HttpResponseConduit.java:235)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:572)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.write(AbstractFixedLengthStreamSinkConduit.java:106)
+	at org.xnio.conduits.Conduits.writeFinalBasic(Conduits.java:132)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.writeFinal(AbstractFixedLengthStreamSinkConduit.java:175)
+	at org.xnio.conduits.ConduitStreamSinkChannel.writeFinal(ConduitStreamSinkChannel.java:104)
+	at io.undertow.channels.DetachableStreamSinkChannel.writeFinal(DetachableStreamSinkChannel.java:195)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.writeFinal(HttpServerExchange.java:1902)
+	at io.undertow.io.UndertowOutputStream.writeBufferBlocking(UndertowOutputStream.java:291)
+	at io.undertow.io.UndertowOutputStream.close(UndertowOutputStream.java:334)
+	at io.undertow.server.HttpServerExchange$DefaultBlockingHttpExchange.close(HttpServerExchange.java:1768)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1487)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:215)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-07-18 15:43:08,882][DEBUG][io.undertow.request.io] UT005013: An IOException occurred
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.writev0(Native Method)
+	at sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:148)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:504)
+	at org.xnio.nio.NioSocketConduit.write(NioSocketConduit.java:162)
+	at io.undertow.server.protocol.http.HttpResponseConduit.processWrite(HttpResponseConduit.java:235)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:572)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.write(AbstractFixedLengthStreamSinkConduit.java:106)
+	at org.xnio.conduits.Conduits.writeFinalBasic(Conduits.java:132)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.writeFinal(AbstractFixedLengthStreamSinkConduit.java:175)
+	at org.xnio.conduits.ConduitStreamSinkChannel.writeFinal(ConduitStreamSinkChannel.java:104)
+	at io.undertow.channels.DetachableStreamSinkChannel.writeFinal(DetachableStreamSinkChannel.java:195)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.writeFinal(HttpServerExchange.java:1902)
+	at io.undertow.io.UndertowOutputStream.writeBufferBlocking(UndertowOutputStream.java:291)
+	at io.undertow.io.UndertowOutputStream.close(UndertowOutputStream.java:334)
+	at io.undertow.server.HttpServerExchange$DefaultBlockingHttpExchange.close(HttpServerExchange.java:1768)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1487)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:215)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-07-18 16:26:04,543][DEBUG][io.undertow.request.io] Closing connection from /172.104.153.48:34102 due to unknown protocol RTSP/1.0
+[2017-07-18 16:26:04,543][DEBUG][io.undertow.request.io] UT005014: Failed to parse HTTP request
+java.io.IOException
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:207)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 16:26:04,855][DEBUG][io.undertow.request.io] UT005014: Failed to parse HTTP request
+java.lang.IllegalArgumentException: Invalid string contents
+	at io.undertow.util.HttpString.<init>(HttpString.java:111)
+	at io.undertow.util.HttpString.<init>(HttpString.java:101)
+	at io.undertow.server.protocol.http.HttpRequestParser$$generated.handleHttpVerb(Unknown Source)
+	at io.undertow.server.protocol.http.HttpRequestParser.handle(HttpRequestParser.java:213)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:176)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 16:26:17,341][DEBUG][io.undertow.request.io] UT005014: Failed to parse HTTP request
+java.lang.RuntimeException: UT000037: Failed to parse path in HTTP request
+	at io.undertow.server.protocol.http.HttpRequestParser.handlePath(HttpRequestParser.java:368)
+	at io.undertow.server.protocol.http.HttpRequestParser.handle(HttpRequestParser.java:215)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:176)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:143)
+	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:90)
+	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:49)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.ChannelListeners$10.handleEvent(ChannelListeners.java:291)
+	at org.xnio.ChannelListeners$10.handleEvent(ChannelListeners.java:286)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.nio.NioTcpServerHandle.handleReady(NioTcpServerHandle.java:53)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 16:26:17,435][DEBUG][io.undertow.request.io] UT005014: Failed to parse HTTP request
+java.lang.IllegalArgumentException: Invalid string contents
+	at io.undertow.util.HttpString.<init>(HttpString.java:111)
+	at io.undertow.util.HttpString.<init>(HttpString.java:101)
+	at io.undertow.server.protocol.http.HttpRequestParser$$generated.handleHttpVerb(Unknown Source)
+	at io.undertow.server.protocol.http.HttpRequestParser.handle(HttpRequestParser.java:213)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:176)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:143)
+	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:90)
+	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:49)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.ChannelListeners$10.handleEvent(ChannelListeners.java:291)
+	at org.xnio.ChannelListeners$10.handleEvent(ChannelListeners.java:286)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.nio.NioTcpServerHandle.handleReady(NioTcpServerHandle.java:53)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 16:26:17,544][DEBUG][io.undertow.request.io] UT005014: Failed to parse HTTP request
+java.lang.IllegalArgumentException: Invalid string contents
+	at io.undertow.util.HttpString.<init>(HttpString.java:111)
+	at io.undertow.util.HttpString.<init>(HttpString.java:101)
+	at io.undertow.server.protocol.http.HttpRequestParser$$generated.handleHttpVerb(Unknown Source)
+	at io.undertow.server.protocol.http.HttpRequestParser.handle(HttpRequestParser.java:213)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:176)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 16:26:17,670][DEBUG][io.undertow.request.io] UT005014: Failed to parse HTTP request
+java.lang.IllegalArgumentException: Invalid string contents
+	at io.undertow.util.HttpString.<init>(HttpString.java:111)
+	at io.undertow.util.HttpString.<init>(HttpString.java:101)
+	at io.undertow.server.protocol.http.HttpRequestParser$$generated.handleHttpVerb(Unknown Source)
+	at io.undertow.server.protocol.http.HttpRequestParser.handle(HttpRequestParser.java:213)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:176)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 16:26:17,817][DEBUG][io.undertow.request.io] UT005014: Failed to parse HTTP request
+java.lang.IllegalArgumentException: Invalid string contents
+	at io.undertow.util.HttpString.<init>(HttpString.java:111)
+	at io.undertow.util.HttpString.<init>(HttpString.java:101)
+	at io.undertow.server.protocol.http.HttpRequestParser$$generated.handleHttpVerb(Unknown Source)
+	at io.undertow.server.protocol.http.HttpRequestParser.handle(HttpRequestParser.java:213)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:176)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 16:26:21,018][DEBUG][io.undertow.request.io] UT005014: Failed to parse HTTP request
+java.lang.IllegalArgumentException: Invalid string contents
+	at io.undertow.util.HttpString.<init>(HttpString.java:111)
+	at io.undertow.util.HttpString.<init>(HttpString.java:101)
+	at io.undertow.server.protocol.http.HttpRequestParser$$generated.handleHttpVerb(Unknown Source)
+	at io.undertow.server.protocol.http.HttpRequestParser.handle(HttpRequestParser.java:213)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:176)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 16:26:22,704][DEBUG][io.undertow.request.io] Closing connection from /172.104.153.48:37232 due to unknown protocol SIP/2.0
+[2017-07-18 16:26:22,704][DEBUG][io.undertow.request.io] UT005014: Failed to parse HTTP request
+java.io.IOException
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:207)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 16:26:30,577][DEBUG][io.undertow.request.io] UT005014: Failed to parse HTTP request
+java.lang.IllegalArgumentException: Invalid string contents
+	at io.undertow.util.HttpString.<init>(HttpString.java:111)
+	at io.undertow.util.HttpString.<init>(HttpString.java:101)
+	at io.undertow.server.protocol.http.HttpRequestParser$$generated.handleHttpVerb(Unknown Source)
+	at io.undertow.server.protocol.http.HttpRequestParser.handle(HttpRequestParser.java:213)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:176)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 16:26:30,683][DEBUG][io.undertow.request.io] UT005014: Failed to parse HTTP request
+java.lang.IllegalArgumentException: Invalid string contents
+	at io.undertow.util.HttpString.<init>(HttpString.java:111)
+	at io.undertow.util.HttpString.<init>(HttpString.java:101)
+	at io.undertow.server.protocol.http.HttpRequestParser$$generated.handleHttpVerb(Unknown Source)
+	at io.undertow.server.protocol.http.HttpRequestParser.handle(HttpRequestParser.java:213)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:176)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 16:56:50,526][DEBUG][io.undertow.request.io] UT005013: An IOException occurred
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.writev0(Native Method)
+	at sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:148)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:504)
+	at org.xnio.nio.NioSocketConduit.write(NioSocketConduit.java:162)
+	at io.undertow.server.protocol.http.HttpResponseConduit.processWrite(HttpResponseConduit.java:235)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:572)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.write(AbstractFixedLengthStreamSinkConduit.java:106)
+	at org.xnio.conduits.Conduits.writeFinalBasic(Conduits.java:132)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.writeFinal(AbstractFixedLengthStreamSinkConduit.java:175)
+	at org.xnio.conduits.ConduitStreamSinkChannel.writeFinal(ConduitStreamSinkChannel.java:104)
+	at io.undertow.channels.DetachableStreamSinkChannel.writeFinal(DetachableStreamSinkChannel.java:195)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.writeFinal(HttpServerExchange.java:1902)
+	at io.undertow.io.UndertowOutputStream.writeBufferBlocking(UndertowOutputStream.java:291)
+	at io.undertow.io.UndertowOutputStream.close(UndertowOutputStream.java:334)
+	at io.undertow.server.HttpServerExchange$DefaultBlockingHttpExchange.close(HttpServerExchange.java:1768)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1487)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:215)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-07-18 17:11:56,840][DEBUG][io.undertow.request.io] UT005013: An IOException occurred
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.writev0(Native Method)
+	at sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:148)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:504)
+	at org.xnio.nio.NioSocketConduit.write(NioSocketConduit.java:162)
+	at io.undertow.server.protocol.http.HttpResponseConduit.processWrite(HttpResponseConduit.java:235)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:572)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.write(AbstractFixedLengthStreamSinkConduit.java:106)
+	at org.xnio.conduits.Conduits.writeFinalBasic(Conduits.java:132)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.writeFinal(AbstractFixedLengthStreamSinkConduit.java:175)
+	at org.xnio.conduits.ConduitStreamSinkChannel.writeFinal(ConduitStreamSinkChannel.java:104)
+	at io.undertow.channels.DetachableStreamSinkChannel.writeFinal(DetachableStreamSinkChannel.java:195)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.writeFinal(HttpServerExchange.java:1902)
+	at io.undertow.io.UndertowOutputStream.writeBufferBlocking(UndertowOutputStream.java:291)
+	at io.undertow.io.UndertowOutputStream.close(UndertowOutputStream.java:334)
+	at io.undertow.server.HttpServerExchange$DefaultBlockingHttpExchange.close(HttpServerExchange.java:1768)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1487)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:215)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-07-18 18:15:58,883][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 18:33:21,370][DEBUG][io.undertow.request.io] UT005013: An IOException occurred
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.writev0(Native Method)
+	at sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:148)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:504)
+	at org.xnio.nio.NioSocketConduit.write(NioSocketConduit.java:162)
+	at io.undertow.server.protocol.http.HttpResponseConduit.processWrite(HttpResponseConduit.java:235)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:572)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.write(AbstractFixedLengthStreamSinkConduit.java:106)
+	at org.xnio.conduits.Conduits.writeFinalBasic(Conduits.java:132)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.writeFinal(AbstractFixedLengthStreamSinkConduit.java:175)
+	at org.xnio.conduits.ConduitStreamSinkChannel.writeFinal(ConduitStreamSinkChannel.java:104)
+	at io.undertow.channels.DetachableStreamSinkChannel.writeFinal(DetachableStreamSinkChannel.java:195)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.writeFinal(HttpServerExchange.java:1902)
+	at io.undertow.io.UndertowOutputStream.writeBufferBlocking(UndertowOutputStream.java:291)
+	at io.undertow.io.UndertowOutputStream.close(UndertowOutputStream.java:334)
+	at io.undertow.server.HttpServerExchange$DefaultBlockingHttpExchange.close(HttpServerExchange.java:1768)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1487)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:215)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-07-18 18:48:25,888][DEBUG][io.undertow.request.io] UT005013: An IOException occurred
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.writev0(Native Method)
+	at sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:148)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:504)
+	at org.xnio.nio.NioSocketConduit.write(NioSocketConduit.java:162)
+	at io.undertow.server.protocol.http.HttpResponseConduit.processWrite(HttpResponseConduit.java:235)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:572)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.write(AbstractFixedLengthStreamSinkConduit.java:106)
+	at org.xnio.conduits.Conduits.writeFinalBasic(Conduits.java:132)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.writeFinal(AbstractFixedLengthStreamSinkConduit.java:175)
+	at org.xnio.conduits.ConduitStreamSinkChannel.writeFinal(ConduitStreamSinkChannel.java:104)
+	at io.undertow.channels.DetachableStreamSinkChannel.writeFinal(DetachableStreamSinkChannel.java:195)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.writeFinal(HttpServerExchange.java:1902)
+	at io.undertow.io.UndertowOutputStream.writeBufferBlocking(UndertowOutputStream.java:291)
+	at io.undertow.io.UndertowOutputStream.close(UndertowOutputStream.java:334)
+	at io.undertow.server.HttpServerExchange$DefaultBlockingHttpExchange.close(HttpServerExchange.java:1768)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1487)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:215)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-07-18 18:54:36,083][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 19:18:47,888][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 19:18:48,292][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-18 20:09:01,981][DEBUG][io.undertow.request.io] UT005013: An IOException occurred
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.writev0(Native Method)
+	at sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:148)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:504)
+	at org.xnio.nio.NioSocketConduit.write(NioSocketConduit.java:162)
+	at io.undertow.server.protocol.http.HttpResponseConduit.processWrite(HttpResponseConduit.java:235)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:572)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.write(AbstractFixedLengthStreamSinkConduit.java:106)
+	at org.xnio.conduits.Conduits.writeFinalBasic(Conduits.java:132)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.writeFinal(AbstractFixedLengthStreamSinkConduit.java:175)
+	at org.xnio.conduits.ConduitStreamSinkChannel.writeFinal(ConduitStreamSinkChannel.java:104)
+	at io.undertow.channels.DetachableStreamSinkChannel.writeFinal(DetachableStreamSinkChannel.java:195)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.writeFinal(HttpServerExchange.java:1902)
+	at io.undertow.io.UndertowOutputStream.writeBufferBlocking(UndertowOutputStream.java:291)
+	at io.undertow.io.UndertowOutputStream.close(UndertowOutputStream.java:334)
+	at io.undertow.server.HttpServerExchange$DefaultBlockingHttpExchange.close(HttpServerExchange.java:1768)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1487)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:215)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-07-18 20:24:09,759][DEBUG][io.undertow.request.io] UT005013: An IOException occurred
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.writev0(Native Method)
+	at sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:148)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:504)
+	at org.xnio.nio.NioSocketConduit.write(NioSocketConduit.java:162)
+	at io.undertow.server.protocol.http.HttpResponseConduit.processWrite(HttpResponseConduit.java:235)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:572)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.write(AbstractFixedLengthStreamSinkConduit.java:106)
+	at org.xnio.conduits.Conduits.writeFinalBasic(Conduits.java:132)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.writeFinal(AbstractFixedLengthStreamSinkConduit.java:175)
+	at org.xnio.conduits.ConduitStreamSinkChannel.writeFinal(ConduitStreamSinkChannel.java:104)
+	at io.undertow.channels.DetachableStreamSinkChannel.writeFinal(DetachableStreamSinkChannel.java:195)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.writeFinal(HttpServerExchange.java:1902)
+	at io.undertow.io.UndertowOutputStream.writeBufferBlocking(UndertowOutputStream.java:291)
+	at io.undertow.io.UndertowOutputStream.close(UndertowOutputStream.java:334)
+	at io.undertow.server.HttpServerExchange$DefaultBlockingHttpExchange.close(HttpServerExchange.java:1768)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1487)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:215)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-07-18 21:44:43,251][DEBUG][io.undertow.request.io] UT005013: An IOException occurred
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.writev0(Native Method)
+	at sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:148)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:504)
+	at org.xnio.nio.NioSocketConduit.write(NioSocketConduit.java:162)
+	at io.undertow.server.protocol.http.HttpResponseConduit.processWrite(HttpResponseConduit.java:235)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:572)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.write(AbstractFixedLengthStreamSinkConduit.java:106)
+	at org.xnio.conduits.Conduits.writeFinalBasic(Conduits.java:132)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.writeFinal(AbstractFixedLengthStreamSinkConduit.java:175)
+	at org.xnio.conduits.ConduitStreamSinkChannel.writeFinal(ConduitStreamSinkChannel.java:104)
+	at io.undertow.channels.DetachableStreamSinkChannel.writeFinal(DetachableStreamSinkChannel.java:195)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.writeFinal(HttpServerExchange.java:1902)
+	at io.undertow.io.UndertowOutputStream.writeBufferBlocking(UndertowOutputStream.java:291)
+	at io.undertow.io.UndertowOutputStream.close(UndertowOutputStream.java:334)
+	at io.undertow.server.HttpServerExchange$DefaultBlockingHttpExchange.close(HttpServerExchange.java:1768)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1487)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:215)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-07-18 21:59:48,403][DEBUG][io.undertow.request.io] UT005013: An IOException occurred
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.writev0(Native Method)
+	at sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:148)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:504)
+	at org.xnio.nio.NioSocketConduit.write(NioSocketConduit.java:162)
+	at io.undertow.server.protocol.http.HttpResponseConduit.processWrite(HttpResponseConduit.java:235)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:572)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.write(AbstractFixedLengthStreamSinkConduit.java:106)
+	at org.xnio.conduits.Conduits.writeFinalBasic(Conduits.java:132)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.writeFinal(AbstractFixedLengthStreamSinkConduit.java:175)
+	at org.xnio.conduits.ConduitStreamSinkChannel.writeFinal(ConduitStreamSinkChannel.java:104)
+	at io.undertow.channels.DetachableStreamSinkChannel.writeFinal(DetachableStreamSinkChannel.java:195)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.writeFinal(HttpServerExchange.java:1902)
+	at io.undertow.io.UndertowOutputStream.writeBufferBlocking(UndertowOutputStream.java:291)
+	at io.undertow.io.UndertowOutputStream.close(UndertowOutputStream.java:334)
+	at io.undertow.server.HttpServerExchange$DefaultBlockingHttpExchange.close(HttpServerExchange.java:1768)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1487)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:215)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-07-18 23:20:23,960][DEBUG][io.undertow.request.io] UT005013: An IOException occurred
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.writev0(Native Method)
+	at sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:148)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:504)
+	at org.xnio.nio.NioSocketConduit.write(NioSocketConduit.java:162)
+	at io.undertow.server.protocol.http.HttpResponseConduit.processWrite(HttpResponseConduit.java:235)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:572)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.write(AbstractFixedLengthStreamSinkConduit.java:106)
+	at org.xnio.conduits.Conduits.writeFinalBasic(Conduits.java:132)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.writeFinal(AbstractFixedLengthStreamSinkConduit.java:175)
+	at org.xnio.conduits.ConduitStreamSinkChannel.writeFinal(ConduitStreamSinkChannel.java:104)
+	at io.undertow.channels.DetachableStreamSinkChannel.writeFinal(DetachableStreamSinkChannel.java:195)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.writeFinal(HttpServerExchange.java:1902)
+	at io.undertow.io.UndertowOutputStream.writeBufferBlocking(UndertowOutputStream.java:291)
+	at io.undertow.io.UndertowOutputStream.close(UndertowOutputStream.java:334)
+	at io.undertow.server.HttpServerExchange$DefaultBlockingHttpExchange.close(HttpServerExchange.java:1768)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1487)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:215)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-07-18 23:35:28,826][DEBUG][io.undertow.request.io] UT005013: An IOException occurred
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.writev0(Native Method)
+	at sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:148)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:504)
+	at org.xnio.nio.NioSocketConduit.write(NioSocketConduit.java:162)
+	at io.undertow.server.protocol.http.HttpResponseConduit.processWrite(HttpResponseConduit.java:235)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:572)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.write(AbstractFixedLengthStreamSinkConduit.java:106)
+	at org.xnio.conduits.Conduits.writeFinalBasic(Conduits.java:132)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.writeFinal(AbstractFixedLengthStreamSinkConduit.java:175)
+	at org.xnio.conduits.ConduitStreamSinkChannel.writeFinal(ConduitStreamSinkChannel.java:104)
+	at io.undertow.channels.DetachableStreamSinkChannel.writeFinal(DetachableStreamSinkChannel.java:195)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.writeFinal(HttpServerExchange.java:1902)
+	at io.undertow.io.UndertowOutputStream.writeBufferBlocking(UndertowOutputStream.java:291)
+	at io.undertow.io.UndertowOutputStream.close(UndertowOutputStream.java:334)
+	at io.undertow.server.HttpServerExchange$DefaultBlockingHttpExchange.close(HttpServerExchange.java:1768)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1487)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:215)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-07-19 00:56:04,782][DEBUG][io.undertow.request.io] UT005013: An IOException occurred
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.writev0(Native Method)
+	at sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:148)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:504)
+	at org.xnio.nio.NioSocketConduit.write(NioSocketConduit.java:162)
+	at io.undertow.server.protocol.http.HttpResponseConduit.processWrite(HttpResponseConduit.java:235)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:572)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.write(AbstractFixedLengthStreamSinkConduit.java:106)
+	at org.xnio.conduits.Conduits.writeFinalBasic(Conduits.java:132)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.writeFinal(AbstractFixedLengthStreamSinkConduit.java:175)
+	at org.xnio.conduits.ConduitStreamSinkChannel.writeFinal(ConduitStreamSinkChannel.java:104)
+	at io.undertow.channels.DetachableStreamSinkChannel.writeFinal(DetachableStreamSinkChannel.java:195)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.writeFinal(HttpServerExchange.java:1902)
+	at io.undertow.io.UndertowOutputStream.writeBufferBlocking(UndertowOutputStream.java:291)
+	at io.undertow.io.UndertowOutputStream.close(UndertowOutputStream.java:334)
+	at io.undertow.server.HttpServerExchange$DefaultBlockingHttpExchange.close(HttpServerExchange.java:1768)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1487)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:215)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-07-19 01:11:09,379][DEBUG][io.undertow.request.io] UT005013: An IOException occurred
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.writev0(Native Method)
+	at sun.nio.ch.SocketDispatcher.writev(SocketDispatcher.java:51)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:148)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:504)
+	at org.xnio.nio.NioSocketConduit.write(NioSocketConduit.java:162)
+	at io.undertow.server.protocol.http.HttpResponseConduit.processWrite(HttpResponseConduit.java:235)
+	at io.undertow.server.protocol.http.HttpResponseConduit.write(HttpResponseConduit.java:572)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.write(AbstractFixedLengthStreamSinkConduit.java:106)
+	at org.xnio.conduits.Conduits.writeFinalBasic(Conduits.java:132)
+	at io.undertow.conduits.AbstractFixedLengthStreamSinkConduit.writeFinal(AbstractFixedLengthStreamSinkConduit.java:175)
+	at org.xnio.conduits.ConduitStreamSinkChannel.writeFinal(ConduitStreamSinkChannel.java:104)
+	at io.undertow.channels.DetachableStreamSinkChannel.writeFinal(DetachableStreamSinkChannel.java:195)
+	at io.undertow.server.HttpServerExchange$WriteDispatchChannel.writeFinal(HttpServerExchange.java:1902)
+	at io.undertow.io.UndertowOutputStream.writeBufferBlocking(UndertowOutputStream.java:291)
+	at io.undertow.io.UndertowOutputStream.close(UndertowOutputStream.java:334)
+	at io.undertow.server.HttpServerExchange$DefaultBlockingHttpExchange.close(HttpServerExchange.java:1768)
+	at io.undertow.server.HttpServerExchange.endExchange(HttpServerExchange.java:1487)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:215)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2017-07-19 01:35:37,027][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-19 02:26:56,175][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
+[2017-07-19 10:39:51,063][DEBUG][io.undertow.request.io] Error reading request
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.xnio.nio.NioSocketConduit.read(NioSocketConduit.java:287)
+	at org.xnio.conduits.ConduitStreamSourceChannel.read(ConduitStreamSourceChannel.java:127)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:150)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:128)
+	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:56)
+	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
+	at org.xnio.conduits.ReadReadyHandler$ChannelListenerHandler.readReady(ReadReadyHandler.java:66)
+	at org.xnio.nio.NioSocketConduit.handleReady(NioSocketConduit.java:89)
+	at org.xnio.nio.WorkerThread.run(WorkerThread.java:545)
